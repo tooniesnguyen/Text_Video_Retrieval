@@ -1,0 +1,9 @@
+logger:
+  log_dir: 'logs/'
+  log_clear_days: 20
+
+device_id: 0
+
+data:
+  path_video: 'data/videos/Keyframes_L01'
+  path_img: 'data/images/Keyframes_L01'

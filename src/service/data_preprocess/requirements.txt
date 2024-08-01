@@ -1,0 +1,8 @@
+#python 3.7
+einops
+ffmpeg-python
+numpy
+matplotlib
+torch
+opencv-python
+tensorflow==2.1

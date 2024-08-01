@@ -1,0 +1,7 @@
+data/
+*.pth
+*.ttf
+*__pycache__
+.vscode
+reports
+.logs

@@ -1,0 +1,754 @@
+2024-08-01 11:06:36,536 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 11:06:36,536 - src.service.experiment.preprocess_experiment - ERROR - expected str, bytes or os.PathLike object, not NoneType
+2024-08-01 11:06:36,537 - src.service.experiment.preprocess_experiment - ERROR - Traceback (most recent call last):
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/experiment/preprocess_experiment.py", line 17, in run
+    self.predictor.predict()
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/utils/timer.py", line 29, in wraper
+    result = func(*args, **kwargs)
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/predictor/preprocess_predictor.py", line 13, in predict
+    self.model.run()
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Transnetv2/implemet.py", line 26, in run
+    video_paths = sorted(glob.glob(os.path.join(self.input_dir, "*mp4")))
+  File "/home/toonies/miniconda3/envs/autoshot/lib/python3.7/posixpath.py", line 80, in join
+    a = os.fspath(a)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+2024-08-01 11:06:36,537 - src.utils.timer - INFO - DONE PROCESS PHASE EXPERIMENT IN 0.0008s
+2024-08-01 11:11:13,993 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 11:11:13,993 - src.utils.timer - INFO - DONE PROCESS PHASE TEST IN 0.0002s
+2024-08-01 11:11:13,993 - src.utils.timer - INFO - DONE PROCESS PHASE EXPERIMENT IN 0.0006s
+2024-08-01 11:12:18,155 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 11:12:18,156 - src.utils.timer - INFO - DONE PROCESS PHASE TEST IN 0.0002s
+2024-08-01 11:12:18,156 - src.utils.timer - INFO - DONE PROCESS PHASE EXPERIMENT IN 0.0005s
+2024-08-01 11:17:17,272 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 11:17:17,273 - src.utils.timer - INFO - DONE PROCESS PHASE TEST IN 0.0002s
+2024-08-01 11:17:17,273 - src.utils.timer - INFO - DONE PROCESS PHASE EXPERIMENT IN 0.0005s
+2024-08-01 11:17:46,898 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 11:17:46,899 - src.utils.timer - INFO - DONE PROCESS PHASE TEST IN 0.0002s
+2024-08-01 11:17:46,899 - src.utils.timer - INFO - DONE PROCESS PHASE EXPERIMENT IN 0.0006s
+2024-08-01 11:18:25,424 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 11:18:25,425 - src.utils.timer - INFO - DONE PROCESS PHASE TEST IN 0.0002s
+2024-08-01 11:18:25,425 - src.utils.timer - INFO - DONE PROCESS PHASE EXPERIMENT IN 0.0005s
+2024-08-01 11:24:40,736 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 11:24:40,736 - src.utils.timer - INFO - DONE PROCESS PHASE TEST IN 0.0002s
+2024-08-01 11:24:40,736 - src.utils.timer - INFO - DONE PROCESS PHASE EXPERIMENT IN 0.0005s
+2024-08-01 11:24:55,467 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 11:24:55,467 - src.utils.timer - INFO - DONE PROCESS PHASE TEST IN 0.0002s
+2024-08-01 11:24:55,468 - src.utils.timer - INFO - DONE PROCESS PHASE EXPERIMENT IN 0.0005s
+2024-08-01 11:25:16,609 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 11:25:16,610 - src.utils.timer - INFO - DONE PROCESS PHASE TEST IN 0.0002s
+2024-08-01 11:25:16,610 - src.utils.timer - INFO - DONE PROCESS PHASE EXPERIMENT IN 0.0005s
+2024-08-01 11:26:21,412 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 11:26:21,413 - src.utils.timer - INFO - DONE PROCESS PHASE TEST IN 0.0004s
+2024-08-01 11:26:21,413 - src.utils.timer - INFO - DONE PROCESS PHASE EXPERIMENT IN 0.0012s
+2024-08-01 11:26:42,725 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 11:26:42,726 - src.utils.timer - INFO - DONE PROCESS PHASE TEST IN 0.0002s
+2024-08-01 11:26:42,726 - src.utils.timer - INFO - DONE PROCESS PHASE EXPERIMENT IN 0.0005s
+2024-08-01 11:27:05,278 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 11:27:05,279 - src.utils.timer - INFO - DONE PROCESS PHASE TEST IN 0.0002s
+2024-08-01 11:27:05,279 - src.utils.timer - INFO - DONE PROCESS PHASE EXPERIMENT IN 0.0005s
+2024-08-01 11:28:32,783 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 11:29:31,213 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 11:34:41,912 - src.service.experiment.preprocess_experiment - ERROR - [Errno 21] Is a directory: 'data/images/videoplayback'
+2024-08-01 11:34:41,912 - src.service.experiment.preprocess_experiment - ERROR - Traceback (most recent call last):
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/experiment/preprocess_experiment.py", line 17, in run
+    self.predictor.predict()
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/utils/timer.py", line 29, in wraper
+    result = func(*args, **kwargs)
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/predictor/preprocess_predictor.py", line 13, in predict
+    self.model.run()
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Transnetv2/implemet.py", line 35, in run
+    Result2Text(folder_path, predictions= scenes)
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/utils/utils.py", line 38, in Result2Text
+    with open(txt_dir,"w") as f:
+IsADirectoryError: [Errno 21] Is a directory: 'data/images/videoplayback'
+
+2024-08-01 11:34:41,916 - src.utils.timer - INFO - DONE PROCESS PHASE EXPERIMENT IN 310.7030s
+2024-08-01 11:38:05,343 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 11:42:24,174 - src.utils.timer - INFO - DONE PROCESS PHASE TEST IN 258.8304s
+2024-08-01 11:42:24,174 - src.utils.timer - INFO - DONE PROCESS PHASE EXPERIMENT IN 258.8309s
+2024-08-01 14:45:25,440 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 14:50:32,421 - src.utils.timer - INFO - DONE PROCESS PHASE TEST IN 306.9796s
+2024-08-01 14:50:32,421 - src.utils.timer - INFO - DONE PROCESS PHASE EXPERIMENT IN 306.9813s
+2024-08-01 15:09:50,334 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 15:11:38,851 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 15:15:45,980 - src.utils.timer - INFO - DONE PROCESS PHASE TEST IN 247.1284s
+2024-08-01 15:15:45,980 - src.utils.timer - INFO - DONE PROCESS PHASE EXPERIMENT IN 247.1291s
+2024-08-01 15:39:31,760 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 15:45:43,819 - src.service.experiment.preprocess_experiment - ERROR - cannot open resource
+2024-08-01 15:45:43,821 - src.service.experiment.preprocess_experiment - ERROR - Traceback (most recent call last):
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/experiment/preprocess_experiment.py", line 17, in run
+    self.predictor.predict()
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/utils/timer.py", line 29, in wraper
+    result = func(*args, **kwargs)
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/predictor/preprocess_predictor.py", line 13, in predict
+    self.model.run()
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Transnetv2/implemet.py", line 36, in run
+    Visualize2Image(video_path, scenes, "transet")
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/utils/visualizer.py", line 101, in Visualize2Image
+    img_visualize = visualize_predict(frames, predictions)
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/utils/visualizer.py", line 73, in visualize_predict
+    font = ImageFont.truetype("fonts/AbyssinicaSIL-R.ttf", 12)
+  File "/home/toonies/miniconda3/envs/autoshot/lib/python3.7/site-packages/PIL/ImageFont.py", line 996, in truetype
+    return freetype(font)
+  File "/home/toonies/miniconda3/envs/autoshot/lib/python3.7/site-packages/PIL/ImageFont.py", line 993, in freetype
+    return FreeTypeFont(font, size, index, encoding, layout_engine)
+  File "/home/toonies/miniconda3/envs/autoshot/lib/python3.7/site-packages/PIL/ImageFont.py", line 249, in __init__
+    font, size, index, encoding, layout_engine=layout_engine
+OSError: cannot open resource
+
+2024-08-01 15:45:43,847 - src.utils.timer - INFO - DONE PROCESS PHASE EXPERIMENT IN 372.0868s
+2024-08-01 15:48:34,515 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 15:55:11,105 - src.service.experiment.preprocess_experiment - ERROR - The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2024-08-01 15:55:11,108 - src.service.experiment.preprocess_experiment - ERROR - Traceback (most recent call last):
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/experiment/preprocess_experiment.py", line 17, in run
+    self.predictor.predict()
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/utils/timer.py", line 29, in wraper
+    result = func(*args, **kwargs)
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/predictor/preprocess_predictor.py", line 13, in predict
+    self.model.run()
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Transnetv2/implemet.py", line 36, in run
+    Visualize2Image(video_path, scenes, "transet")
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/utils/visualizer.py", line 101, in Visualize2Image
+    img_visualize = visualize_predict(frames, predictions)
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/utils/visualizer.py", line 92, in visualize_predict
+    if value != 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+
+2024-08-01 15:55:11,141 - src.utils.timer - INFO - DONE PROCESS PHASE EXPERIMENT IN 396.6252s
+2024-08-01 16:04:13,567 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 16:07:41,241 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 16:14:08,143 - src.service.experiment.preprocess_experiment - ERROR - module 'os' has no attribute 'join'
+2024-08-01 16:14:08,144 - src.service.experiment.preprocess_experiment - ERROR - Traceback (most recent call last):
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/experiment/preprocess_experiment.py", line 17, in run
+    self.predictor.predict()
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/utils/timer.py", line 29, in wraper
+    result = func(*args, **kwargs)
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/predictor/preprocess_predictor.py", line 13, in predict
+    self.model.run()
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Transnetv2/implemet.py", line 36, in run
+    Visualize2Image(video_path, scenes, "transet")
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/utils/visualizer.py", line 102, in Visualize2Image
+    output_dir = os.join(WORK_DIR,'reports/compared')
+AttributeError: module 'os' has no attribute 'join'
+
+2024-08-01 16:14:08,157 - src.utils.timer - INFO - DONE PROCESS PHASE EXPERIMENT IN 386.9159s
+2024-08-01 16:18:11,893 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 16:24:56,595 - src.utils.timer - INFO - DONE PROCESS PHASE TEST IN 404.7012s
+2024-08-01 16:24:56,595 - src.utils.timer - INFO - DONE PROCESS PHASE EXPERIMENT IN 404.7025s
+2024-08-01 16:48:33,060 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 16:48:43,256 - src.service.experiment.preprocess_experiment - ERROR - _log() got an unexpected keyword argument 'end'
+2024-08-01 16:48:43,257 - src.service.experiment.preprocess_experiment - ERROR - Traceback (most recent call last):
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/experiment/preprocess_experiment.py", line 17, in run
+    self.predictor.predict()
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/utils/timer.py", line 29, in wraper
+    result = func(*args, **kwargs)
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/predictor/preprocess_predictor.py", line 13, in predict
+    self.model.run()
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Transnetv2/implemet.py", line 31, in run
+    video_frames, single_frame_predictions, all_frame_predictions = self.model.predict_video(video_path)
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Transnetv2/transetv2.py", line 105, in predict_video
+    return (video, *self.predict_frames(video))
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Transnetv2/transetv2.py", line 84, in predict_frames
+    ), end="")
+  File "/home/toonies/miniconda3/envs/autoshot/lib/python3.7/logging/__init__.py", line 1378, in info
+    self._log(INFO, msg, args, **kwargs)
+TypeError: _log() got an unexpected keyword argument 'end'
+
+2024-08-01 16:48:43,264 - src.utils.timer - INFO - DONE PROCESS PHASE EXPERIMENT IN 10.2038s
+2024-08-01 16:50:10,001 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 16:50:19,378 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 50/19825
+2024-08-01 16:50:19,853 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 100/19825
+2024-08-01 16:50:20,335 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 150/19825
+2024-08-01 16:50:20,834 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 200/19825
+2024-08-01 16:50:21,335 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 250/19825
+2024-08-01 16:50:21,835 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 300/19825
+2024-08-01 16:50:22,334 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 350/19825
+2024-08-01 16:50:22,821 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 400/19825
+2024-08-01 16:50:23,314 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 450/19825
+2024-08-01 16:50:23,802 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 500/19825
+2024-08-01 16:50:24,302 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 550/19825
+2024-08-01 16:50:24,809 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 600/19825
+2024-08-01 16:50:25,327 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 650/19825
+2024-08-01 16:50:25,839 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 700/19825
+2024-08-01 16:50:26,344 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 750/19825
+2024-08-01 16:50:26,861 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 800/19825
+2024-08-01 16:50:27,361 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 850/19825
+2024-08-01 16:50:27,854 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 900/19825
+2024-08-01 16:50:28,338 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 950/19825
+2024-08-01 16:50:28,831 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1000/19825
+2024-08-01 16:50:29,328 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1050/19825
+2024-08-01 16:50:29,827 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1100/19825
+2024-08-01 16:50:30,315 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1150/19825
+2024-08-01 16:50:30,814 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1200/19825
+2024-08-01 16:50:31,294 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1250/19825
+2024-08-01 16:50:31,786 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1300/19825
+2024-08-01 16:50:32,357 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1350/19825
+2024-08-01 16:50:32,854 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1400/19825
+2024-08-01 16:50:33,352 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1450/19825
+2024-08-01 16:50:33,848 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1500/19825
+2024-08-01 16:50:34,436 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1550/19825
+2024-08-01 16:50:35,063 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1600/19825
+2024-08-01 16:50:35,564 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1650/19825
+2024-08-01 16:50:36,072 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1700/19825
+2024-08-01 16:50:36,566 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1750/19825
+2024-08-01 16:50:37,070 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1800/19825
+2024-08-01 16:50:37,578 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1850/19825
+2024-08-01 16:50:38,132 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1900/19825
+2024-08-01 16:50:38,626 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1950/19825
+2024-08-01 16:50:39,132 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2000/19825
+2024-08-01 16:50:39,631 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2050/19825
+2024-08-01 16:50:40,120 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2100/19825
+2024-08-01 16:50:40,618 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2150/19825
+2024-08-01 16:50:41,102 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2200/19825
+2024-08-01 16:50:41,591 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2250/19825
+2024-08-01 16:50:42,086 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2300/19825
+2024-08-01 16:50:42,576 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2350/19825
+2024-08-01 16:50:43,059 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2400/19825
+2024-08-01 16:50:43,549 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2450/19825
+2024-08-01 16:50:44,041 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2500/19825
+2024-08-01 16:50:44,535 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2550/19825
+2024-08-01 16:50:45,034 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2600/19825
+2024-08-01 16:50:45,528 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2650/19825
+2024-08-01 16:50:46,018 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2700/19825
+2024-08-01 16:50:46,511 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2750/19825
+2024-08-01 16:50:47,002 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2800/19825
+2024-08-01 16:50:47,502 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2850/19825
+2024-08-01 16:50:47,991 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2900/19825
+2024-08-01 16:50:48,478 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2950/19825
+2024-08-01 16:50:48,967 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3000/19825
+2024-08-01 16:50:49,462 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3050/19825
+2024-08-01 16:50:49,950 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3100/19825
+2024-08-01 16:50:50,440 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3150/19825
+2024-08-01 16:50:50,938 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3200/19825
+2024-08-01 16:50:51,565 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3250/19825
+2024-08-01 16:50:52,087 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3300/19825
+2024-08-01 16:50:52,608 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3350/19825
+2024-08-01 16:50:53,133 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3400/19825
+2024-08-01 16:50:53,659 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3450/19825
+2024-08-01 16:50:54,175 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3500/19825
+2024-08-01 16:50:54,731 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3550/19825
+2024-08-01 16:50:55,298 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3600/19825
+2024-08-01 16:50:55,829 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3650/19825
+2024-08-01 16:50:56,349 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3700/19825
+2024-08-01 16:50:56,857 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3750/19825
+2024-08-01 16:50:57,453 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3800/19825
+2024-08-01 16:50:57,946 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3850/19825
+2024-08-01 16:50:58,460 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3900/19825
+2024-08-01 16:50:59,091 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3950/19825
+2024-08-01 16:50:59,642 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4000/19825
+2024-08-01 16:51:00,135 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4050/19825
+2024-08-01 16:51:00,802 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4100/19825
+2024-08-01 16:51:01,421 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4150/19825
+2024-08-01 16:51:01,982 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4200/19825
+2024-08-01 16:51:02,477 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4250/19825
+2024-08-01 16:51:02,985 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4300/19825
+2024-08-01 16:51:03,466 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4350/19825
+2024-08-01 16:51:03,960 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4400/19825
+2024-08-01 16:51:04,481 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4450/19825
+2024-08-01 16:51:04,990 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4500/19825
+2024-08-01 16:51:05,486 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4550/19825
+2024-08-01 16:51:05,984 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4600/19825
+2024-08-01 16:51:06,484 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4650/19825
+2024-08-01 16:51:07,142 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4700/19825
+2024-08-01 16:51:07,739 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4750/19825
+2024-08-01 16:51:08,264 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4800/19825
+2024-08-01 16:51:08,799 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4850/19825
+2024-08-01 16:51:09,313 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4900/19825
+2024-08-01 16:51:09,894 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4950/19825
+2024-08-01 16:51:10,489 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 5000/19825
+2024-08-01 16:51:11,016 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 5050/19825
+2024-08-01 16:51:11,575 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 5100/19825
+2024-08-01 16:51:12,102 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 5150/19825
+2024-08-01 16:51:12,671 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 5200/19825
+2024-08-01 16:51:13,391 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 5250/19825
+2024-08-01 16:51:14,254 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 5300/19825
+2024-08-01 16:51:15,109 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 5350/19825
+2024-08-01 16:51:15,813 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 5400/19825
+2024-08-01 16:51:16,423 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 5450/19825
+2024-08-01 16:51:17,238 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 5500/19825
+2024-08-01 16:51:17,765 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 5550/19825
+2024-08-01 16:51:18,286 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 5600/19825
+2024-08-01 16:51:18,885 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 5650/19825
+2024-08-01 16:51:19,434 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 5700/19825
+2024-08-01 16:51:19,963 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 5750/19825
+2024-08-01 16:51:24,667 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Using weights from /home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Transnetv2/weights/.
+2024-08-01 16:51:31,764 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 16:51:44,693 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 50/19825
+2024-08-01 16:51:45,374 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 100/19825
+2024-08-01 16:51:45,942 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 150/19825
+2024-08-01 16:51:46,552 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 200/19825
+2024-08-01 16:51:47,131 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 250/19825
+2024-08-01 16:51:47,664 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 300/19825
+2024-08-01 16:51:48,247 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 350/19825
+2024-08-01 16:51:49,108 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 400/19825
+2024-08-01 16:51:49,937 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 450/19825
+2024-08-01 16:51:50,676 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 500/19825
+2024-08-01 16:51:51,486 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 550/19825
+2024-08-01 16:51:52,260 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 600/19825
+2024-08-01 16:51:53,138 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 650/19825
+2024-08-01 16:51:53,882 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 700/19825
+2024-08-01 16:51:54,513 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 750/19825
+2024-08-01 16:51:55,302 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 800/19825
+2024-08-01 16:51:55,958 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 850/19825
+2024-08-01 16:51:56,554 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 900/19825
+2024-08-01 16:51:57,165 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 950/19825
+2024-08-01 16:51:57,835 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1000/19825
+2024-08-01 16:51:58,466 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1050/19825
+2024-08-01 16:51:59,359 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1100/19825
+2024-08-01 16:52:00,294 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1150/19825
+2024-08-01 16:52:00,897 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1200/19825
+2024-08-01 16:52:01,468 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1250/19825
+2024-08-01 16:52:02,013 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1300/19825
+2024-08-01 16:52:02,710 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1350/19825
+2024-08-01 16:52:03,274 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1400/19825
+2024-08-01 16:52:03,834 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1450/19825
+2024-08-01 16:52:04,406 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1500/19825
+2024-08-01 16:52:05,134 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1550/19825
+2024-08-01 16:52:05,684 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1600/19825
+2024-08-01 16:52:06,227 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1650/19825
+2024-08-01 16:52:06,775 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1700/19825
+2024-08-01 16:52:07,311 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1750/19825
+2024-08-01 16:52:07,861 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1800/19825
+2024-08-01 16:52:08,415 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1850/19825
+2024-08-01 16:52:08,998 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1900/19825
+2024-08-01 16:52:09,770 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1950/19825
+2024-08-01 16:52:10,343 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2000/19825
+2024-08-01 16:52:10,886 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2050/19825
+2024-08-01 16:52:11,736 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2100/19825
+2024-08-01 16:52:12,324 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2150/19825
+2024-08-01 16:52:12,886 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2200/19825
+2024-08-01 16:52:13,446 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2250/19825
+2024-08-01 16:52:14,001 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2300/19825
+2024-08-01 16:52:14,568 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2350/19825
+2024-08-01 16:52:15,123 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2400/19825
+2024-08-01 16:52:15,692 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2450/19825
+2024-08-01 16:52:16,254 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2500/19825
+2024-08-01 16:52:16,844 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2550/19825
+2024-08-01 16:52:17,442 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2600/19825
+2024-08-01 16:52:17,975 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2650/19825
+2024-08-01 16:52:18,595 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2700/19825
+2024-08-01 16:52:19,460 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2750/19825
+2024-08-01 16:52:20,270 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2800/19825
+2024-08-01 16:52:20,989 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2850/19825
+2024-08-01 16:52:21,549 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2900/19825
+2024-08-01 16:52:22,111 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2950/19825
+2024-08-01 16:52:22,735 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3000/19825
+2024-08-01 16:52:23,575 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3050/19825
+2024-08-01 16:52:24,366 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3100/19825
+2024-08-01 16:52:25,001 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3150/19825
+2024-08-01 16:52:25,836 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3200/19825
+2024-08-01 16:52:26,413 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3250/19825
+2024-08-01 16:52:26,986 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3300/19825
+2024-08-01 16:52:27,612 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3350/19825
+2024-08-01 16:52:28,188 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3400/19825
+2024-08-01 16:52:28,743 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3450/19825
+2024-08-01 16:52:29,276 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3500/19825
+2024-08-01 16:52:29,858 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3550/19825
+2024-08-01 16:52:30,399 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3600/19825
+2024-08-01 16:52:30,954 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3650/19825
+2024-08-01 16:52:31,493 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3700/19825
+2024-08-01 16:52:32,142 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3750/19825
+2024-08-01 16:52:32,687 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3800/19825
+2024-08-01 16:52:33,247 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3850/19825
+2024-08-01 16:52:33,834 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3900/19825
+2024-08-01 16:52:34,404 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3950/19825
+2024-08-01 16:52:34,972 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4000/19825
+2024-08-01 16:52:35,590 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4050/19825
+2024-08-01 16:52:36,319 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4100/19825
+2024-08-01 16:52:36,988 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4150/19825
+2024-08-01 16:52:37,595 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4200/19825
+2024-08-01 16:52:38,339 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4250/19825
+2024-08-01 16:52:39,222 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4300/19825
+2024-08-01 16:52:40,067 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4350/19825
+2024-08-01 16:52:41,021 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4400/19825
+2024-08-01 16:52:41,631 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4450/19825
+2024-08-01 16:52:42,171 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4500/19825
+2024-08-01 16:52:42,752 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4550/19825
+2024-08-01 16:52:47,418 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Using weights from /home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Transnetv2/weights/.
+2024-08-01 16:52:52,702 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 16:52:52,703 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Extracting frames from data/videos/Keyframes_L01/L01_V001.mp4
+2024-08-01 16:53:04,954 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 50/19825
+2024-08-01 16:53:05,524 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 100/19825
+2024-08-01 16:53:06,188 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 150/19825
+2024-08-01 16:53:06,783 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 200/19825
+2024-08-01 16:53:07,314 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 250/19825
+2024-08-01 16:53:07,842 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 300/19825
+2024-08-01 16:53:08,383 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 350/19825
+2024-08-01 16:53:08,901 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 400/19825
+2024-08-01 16:53:09,470 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 450/19825
+2024-08-01 16:53:10,269 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 500/19825
+2024-08-01 16:53:10,955 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 550/19825
+2024-08-01 16:53:11,531 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 600/19825
+2024-08-01 16:53:12,166 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 650/19825
+2024-08-01 16:53:12,774 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 700/19825
+2024-08-01 16:53:13,583 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 750/19825
+2024-08-01 16:53:14,167 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 800/19825
+2024-08-01 16:53:14,769 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 850/19825
+2024-08-01 16:53:15,348 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 900/19825
+2024-08-01 16:53:15,893 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 950/19825
+2024-08-01 16:53:16,522 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1000/19825
+2024-08-01 16:53:17,016 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1050/19825
+2024-08-01 16:53:17,509 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1100/19825
+2024-08-01 16:53:18,003 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1150/19825
+2024-08-01 16:53:18,593 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1200/19825
+2024-08-01 16:53:19,196 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1250/19825
+2024-08-01 16:53:19,795 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1300/19825
+2024-08-01 16:53:20,361 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1350/19825
+2024-08-01 16:53:20,927 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1400/19825
+2024-08-01 16:53:21,503 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1450/19825
+2024-08-01 16:53:22,076 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1500/19825
+2024-08-01 16:53:22,633 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1550/19825
+2024-08-01 16:53:23,135 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1600/19825
+2024-08-01 16:53:23,627 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1650/19825
+2024-08-01 16:53:24,114 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1700/19825
+2024-08-01 16:53:24,605 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1750/19825
+2024-08-01 16:53:25,107 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1800/19825
+2024-08-01 16:53:25,704 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1850/19825
+2024-08-01 16:53:26,273 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1900/19825
+2024-08-01 16:53:26,778 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1950/19825
+2024-08-01 16:53:27,381 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2000/19825
+2024-08-01 16:53:27,994 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2050/19825
+2024-08-01 16:53:37,155 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Using weights from /home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Transnetv2/weights/.
+2024-08-01 16:53:45,499 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Using weights from /home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Transnetv2/weights/.
+2024-08-01 16:53:51,220 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 16:53:51,220 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Extracting frames from data/videos/Keyframes_L01/L01_V001.mp4
+2024-08-01 16:54:04,177 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 50/19825
+2024-08-01 16:54:04,848 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 100/19825
+2024-08-01 16:54:05,479 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 150/19825
+2024-08-01 16:54:06,210 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 200/19825
+2024-08-01 16:54:06,907 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 250/19825
+2024-08-01 16:54:07,445 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 300/19825
+2024-08-01 16:54:08,060 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 350/19825
+2024-08-01 16:54:08,661 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 400/19825
+2024-08-01 16:54:09,210 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 450/19825
+2024-08-01 16:54:09,742 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 500/19825
+2024-08-01 16:54:10,271 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 550/19825
+2024-08-01 16:54:10,832 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 600/19825
+2024-08-01 16:54:11,354 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 650/19825
+2024-08-01 16:54:11,866 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 700/19825
+2024-08-01 16:54:12,371 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 750/19825
+2024-08-01 16:54:12,865 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 800/19825
+2024-08-01 16:54:13,377 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 850/19825
+2024-08-01 16:54:13,879 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 900/19825
+2024-08-01 16:54:14,381 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 950/19825
+2024-08-01 16:54:14,885 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1000/19825
+2024-08-01 16:54:15,391 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1050/19825
+2024-08-01 16:54:15,903 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1100/19825
+2024-08-01 16:54:16,443 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1150/19825
+2024-08-01 16:54:16,933 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1200/19825
+2024-08-01 16:54:17,427 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1250/19825
+2024-08-01 16:54:17,963 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1300/19825
+2024-08-01 16:54:18,508 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1350/19825
+2024-08-01 16:54:19,018 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1400/19825
+2024-08-01 16:54:19,580 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1450/19825
+2024-08-01 16:54:20,098 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1500/19825
+2024-08-01 16:54:20,609 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1550/19825
+2024-08-01 16:54:21,108 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1600/19825
+2024-08-01 16:54:21,710 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1650/19825
+2024-08-01 16:54:22,342 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1700/19825
+2024-08-01 16:54:22,928 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1750/19825
+2024-08-01 16:54:27,120 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Using weights from /home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Transnetv2/weights/.
+2024-08-01 16:54:33,246 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 16:54:33,247 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Extracting frames from data/videos/Keyframes_L01/L01_V001.mp4
+2024-08-01 16:54:49,052 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Using weights from /home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Transnetv2/weights/.
+2024-08-01 16:54:55,906 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Using weights from /home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Transnetv2/weights/.
+2024-08-01 16:55:01,335 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 16:55:01,335 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Extracting frames from data/videos/Keyframes_L01/L01_V001.mp4
+2024-08-01 16:55:10,680 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 50/19825
+2024-08-01 16:55:11,166 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 100/19825
+2024-08-01 16:55:11,653 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 150/19825
+2024-08-01 16:55:12,159 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 200/19825
+2024-08-01 16:55:12,648 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 250/19825
+2024-08-01 16:55:13,310 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 300/19825
+2024-08-01 16:55:13,864 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 350/19825
+2024-08-01 16:55:14,364 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 400/19825
+2024-08-01 16:55:14,867 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 450/19825
+2024-08-01 16:55:15,371 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 500/19825
+2024-08-01 16:55:15,869 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 550/19825
+2024-08-01 16:55:16,369 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 600/19825
+2024-08-01 16:55:16,879 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 650/19825
+2024-08-01 16:55:17,380 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 700/19825
+2024-08-01 16:55:17,886 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 750/19825
+2024-08-01 16:55:18,390 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 800/19825
+2024-08-01 16:55:18,891 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 850/19825
+2024-08-01 16:55:19,397 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 900/19825
+2024-08-01 16:55:19,911 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 950/19825
+2024-08-01 16:55:20,411 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1000/19825
+2024-08-01 16:55:20,910 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1050/19825
+2024-08-01 16:55:21,413 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1100/19825
+2024-08-01 16:55:21,933 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1150/19825
+2024-08-01 16:55:22,451 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1200/19825
+2024-08-01 16:55:22,960 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1250/19825
+2024-08-01 16:55:23,455 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1300/19825
+2024-08-01 16:55:23,941 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1350/19825
+2024-08-01 16:55:24,426 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1400/19825
+2024-08-01 16:55:24,909 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1450/19825
+2024-08-01 16:55:25,388 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1500/19825
+2024-08-01 16:55:25,878 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1550/19825
+2024-08-01 16:55:26,371 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1600/19825
+2024-08-01 16:55:26,904 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1650/19825
+2024-08-01 16:55:27,448 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1700/19825
+2024-08-01 16:55:27,945 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1750/19825
+2024-08-01 16:55:28,432 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1800/19825
+2024-08-01 16:55:28,942 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1850/19825
+2024-08-01 16:55:29,538 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1900/19825
+2024-08-01 16:55:30,033 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 1950/19825
+2024-08-01 16:55:30,509 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2000/19825
+2024-08-01 16:55:31,037 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2050/19825
+2024-08-01 16:55:31,563 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2100/19825
+2024-08-01 16:55:32,077 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2150/19825
+2024-08-01 16:55:32,623 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2200/19825
+2024-08-01 16:55:33,130 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2250/19825
+2024-08-01 16:55:33,658 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2300/19825
+2024-08-01 16:55:34,186 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2350/19825
+2024-08-01 16:55:34,744 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2400/19825
+2024-08-01 16:55:35,264 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2450/19825
+2024-08-01 16:55:35,771 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2500/19825
+2024-08-01 16:55:36,266 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2550/19825
+2024-08-01 16:55:36,785 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2600/19825
+2024-08-01 16:55:37,294 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2650/19825
+2024-08-01 16:55:37,836 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2700/19825
+2024-08-01 16:55:38,345 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2750/19825
+2024-08-01 16:55:38,866 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2800/19825
+2024-08-01 16:55:39,409 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2850/19825
+2024-08-01 16:55:39,919 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2900/19825
+2024-08-01 16:55:40,468 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 2950/19825
+2024-08-01 16:55:41,044 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3000/19825
+2024-08-01 16:55:41,691 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3050/19825
+2024-08-01 16:55:42,221 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3100/19825
+2024-08-01 16:55:42,732 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3150/19825
+2024-08-01 16:55:43,248 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3200/19825
+2024-08-01 16:55:43,773 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3250/19825
+2024-08-01 16:55:44,321 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3300/19825
+2024-08-01 16:55:44,903 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3350/19825
+2024-08-01 16:55:45,609 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3400/19825
+2024-08-01 16:55:46,154 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3450/19825
+2024-08-01 16:55:46,792 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3500/19825
+2024-08-01 16:55:47,472 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3550/19825
+2024-08-01 16:55:48,159 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3600/19825
+2024-08-01 16:55:48,888 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3650/19825
+2024-08-01 16:55:49,672 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3700/19825
+2024-08-01 16:55:50,369 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3750/19825
+2024-08-01 16:55:50,982 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3800/19825
+2024-08-01 16:55:51,674 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3850/19825
+2024-08-01 16:55:52,514 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3900/19825
+2024-08-01 16:55:53,274 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 3950/19825
+2024-08-01 16:55:54,022 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4000/19825
+2024-08-01 16:55:54,589 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4050/19825
+2024-08-01 16:55:55,167 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4100/19825
+2024-08-01 16:55:55,698 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4150/19825
+2024-08-01 16:55:56,362 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4200/19825
+2024-08-01 16:55:57,015 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4250/19825
+2024-08-01 16:55:57,544 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4300/19825
+2024-08-01 16:55:58,175 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4350/19825
+2024-08-01 16:55:58,837 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4400/19825
+2024-08-01 16:55:59,325 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4450/19825
+2024-08-01 16:55:59,809 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4500/19825
+2024-08-01 16:56:00,294 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4550/19825
+2024-08-01 16:56:00,779 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4600/19825
+2024-08-01 16:56:01,268 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4650/19825
+2024-08-01 16:56:01,773 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4700/19825
+2024-08-01 16:56:02,251 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4750/19825
+2024-08-01 16:56:02,797 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4800/19825
+2024-08-01 16:56:03,462 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4850/19825
+2024-08-01 16:56:04,010 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4900/19825
+2024-08-01 16:56:04,507 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 4950/19825
+2024-08-01 16:56:04,994 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 5000/19825
+2024-08-01 16:56:05,484 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 5050/19825
+2024-08-01 16:56:05,963 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 5100/19825
+2024-08-01 16:56:06,482 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 5150/19825
+2024-08-01 16:56:07,079 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 5200/19825
+2024-08-01 16:56:07,578 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 5250/19825
+2024-08-01 16:56:08,077 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 5300/19825
+2024-08-01 16:56:08,654 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 5350/19825
+2024-08-01 16:56:09,515 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 5400/19825
+2024-08-01 16:56:10,060 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 5450/19825
+2024-08-01 16:56:10,645 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 5500/19825
+2024-08-01 16:56:11,239 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 5550/19825
+2024-08-01 16:56:11,789 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 5600/19825
+2024-08-01 16:56:12,427 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 5650/19825
+2024-08-01 16:56:12,944 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 5700/19825
+2024-08-01 16:56:13,508 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 5750/19825
+2024-08-01 16:56:14,042 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 5800/19825
+2024-08-01 16:56:14,608 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 5850/19825
+2024-08-01 16:56:15,154 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 5900/19825
+2024-08-01 16:56:15,668 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 5950/19825
+2024-08-01 16:56:16,192 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 6000/19825
+2024-08-01 16:56:16,822 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 6050/19825
+2024-08-01 16:56:17,359 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Processing video frames 6100/19825
+2024-08-01 16:56:22,142 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Using weights from /home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Transnetv2/weights/.
+2024-08-01 16:56:27,078 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 16:56:27,079 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Extracting frames from data/videos/Keyframes_L01/L01_V001.mp4
+2024-08-01 17:00:48,877 - src.utils.timer - INFO - DONE PROCESS PHASE TEST IN 261.7981s
+2024-08-01 17:00:48,877 - src.utils.timer - INFO - DONE PROCESS PHASE EXPERIMENT IN 261.7987s
+2024-08-01 17:10:52,577 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Using weights from /home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Transnetv2/weights/.
+2024-08-01 17:10:57,774 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 17:10:57,775 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Extracting frames from data/videos/Keyframes_L01/L01_V001.mp4
+2024-08-01 17:16:09,836 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Using weights from /home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Transnetv2/weights/.
+2024-08-01 17:16:15,057 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 17:16:15,057 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Extracting frames from data/videos/Keyframes_L01/L01_V001.mp4
+2024-08-01 17:20:21,961 - src.service.data_preprocess.utils.utils - INFO - Saved all images on data/images/Keyframes_L01/L01_V001
+2024-08-01 17:20:49,966 - src.utils.timer - INFO - DONE PROCESS PHASE TEST IN 274.9087s
+2024-08-01 17:20:49,966 - src.utils.timer - INFO - DONE PROCESS PHASE EXPERIMENT IN 274.9092s
+2024-08-01 17:28:19,121 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Using weights from /home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Transnetv2/weights/.
+2024-08-01 17:29:11,938 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Using weights from /home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Transnetv2/weights/.
+2024-08-01 17:29:17,269 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 17:29:17,269 - src.service.data_preprocess.Transnetv2.transetv2 - INFO - [TransNetV2] Extracting frames from data/videos/Keyframes_L01/L01_V001.mp4
+2024-08-01 18:05:17,222 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Using weights from ./weights/ckpt_0_200_0.pth.
+2024-08-01 18:07:39,240 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Using weights from ./weights/ckpt_0_200_0.pth.
+2024-08-01 18:08:12,198 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Using weights from ./weights/ckpt_0_200_0.pth.
+2024-08-01 18:08:55,761 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Using weights from ./weights/ckpt_0_200_0.pth.
+2024-08-01 18:09:50,757 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Using weights from /home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Autoshot/weights/ckpt_0_200_0.pth.
+2024-08-01 18:10:02,729 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Using weights from /home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Autoshot/weights/ckpt_0_200_0.pth.
+2024-08-01 18:10:38,147 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Using weights from /home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Autoshot/weights/ckpt_0_200_0.pth.
+2024-08-01 18:12:25,009 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Using weights from /home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Autoshot/weights/ckpt_0_200_0.pth.
+2024-08-01 18:12:25,065 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Current model has 90 paras, Update paras 90
+2024-08-01 18:13:13,128 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Using weights from /home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Autoshot/weights/ckpt_0_200_0.pth.
+2024-08-01 18:13:13,165 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Current model has 90 paras, Update paras 90
+2024-08-01 18:13:13,189 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 18:13:13,190 - src.service.experiment.preprocess_experiment - ERROR - [Errno 17] File exists: 'data/images/Keyframes_L01/L01_V001'
+2024-08-01 18:13:13,192 - src.service.experiment.preprocess_experiment - ERROR - Traceback (most recent call last):
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/experiment/preprocess_experiment.py", line 17, in run
+    self.predictor.predict()
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/utils/timer.py", line 29, in wraper
+    result = func(*args, **kwargs)
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/predictor/preprocess_predictor.py", line 13, in predict
+    self.model.run()
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Autoshot/implement.py", line 51, in run
+    os.makedirs(folder_path)
+  File "/home/toonies/miniconda3/envs/autoshot/lib/python3.7/os.py", line 223, in makedirs
+    mkdir(name, mode)
+FileExistsError: [Errno 17] File exists: 'data/images/Keyframes_L01/L01_V001'
+
+2024-08-01 18:13:13,192 - src.utils.timer - INFO - DONE PROCESS PHASE EXPERIMENT IN 0.0027s
+2024-08-01 18:13:41,170 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Using weights from /home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Autoshot/weights/ckpt_0_200_0.pth.
+2024-08-01 18:13:41,201 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Current model has 90 paras, Update paras 90
+2024-08-01 18:13:41,229 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 18:13:41,281 - src.service.experiment.preprocess_experiment - ERROR - ffmpeg error (see stderr output for detail)
+2024-08-01 18:13:41,282 - src.service.experiment.preprocess_experiment - ERROR - Traceback (most recent call last):
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/experiment/preprocess_experiment.py", line 17, in run
+    self.predictor.predict()
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/utils/timer.py", line 29, in wraper
+    result = func(*args, **kwargs)
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/predictor/preprocess_predictor.py", line 13, in predict
+    self.model.run()
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Autoshot/implement.py", line 55, in run
+    frames = get_frames(folder_name)
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/utils/visualizer.py", line 17, in get_frames
+    .run(capture_stdout=True, capture_stderr=True)
+  File "/home/toonies/miniconda3/envs/autoshot/lib/python3.7/site-packages/ffmpeg/_run.py", line 325, in run
+    raise Error('ffmpeg', out, err)
+ffmpeg._run.Error: ffmpeg error (see stderr output for detail)
+
+2024-08-01 18:13:41,282 - src.utils.timer - INFO - DONE PROCESS PHASE EXPERIMENT IN 0.0526s
+2024-08-01 18:14:27,198 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Using weights from /home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Autoshot/weights/ckpt_0_200_0.pth.
+2024-08-01 18:14:27,234 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Current model has 90 paras, Update paras 90
+2024-08-01 18:14:27,252 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 18:14:27,253 - src.service.experiment.preprocess_experiment - ERROR - [Errno 17] File exists: 'data/images/Keyframes_L01/L01_V001'
+2024-08-01 18:14:27,254 - src.service.experiment.preprocess_experiment - ERROR - Traceback (most recent call last):
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/experiment/preprocess_experiment.py", line 17, in run
+    self.predictor.predict()
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/utils/timer.py", line 29, in wraper
+    result = func(*args, **kwargs)
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/predictor/preprocess_predictor.py", line 13, in predict
+    self.model.run()
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Autoshot/implement.py", line 51, in run
+    os.makedirs(folder_path)
+  File "/home/toonies/miniconda3/envs/autoshot/lib/python3.7/os.py", line 223, in makedirs
+    mkdir(name, mode)
+FileExistsError: [Errno 17] File exists: 'data/images/Keyframes_L01/L01_V001'
+
+2024-08-01 18:14:27,254 - src.utils.timer - INFO - DONE PROCESS PHASE EXPERIMENT IN 0.0020s
+2024-08-01 18:14:42,663 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Using weights from /home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Autoshot/weights/ckpt_0_200_0.pth.
+2024-08-01 18:14:42,694 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Current model has 90 paras, Update paras 90
+2024-08-01 18:14:42,722 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 18:14:42,774 - src.service.experiment.preprocess_experiment - ERROR - ffmpeg error (see stderr output for detail)
+2024-08-01 18:14:42,775 - src.service.experiment.preprocess_experiment - ERROR - Traceback (most recent call last):
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/experiment/preprocess_experiment.py", line 17, in run
+    self.predictor.predict()
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/utils/timer.py", line 29, in wraper
+    result = func(*args, **kwargs)
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/predictor/preprocess_predictor.py", line 13, in predict
+    self.model.run()
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Autoshot/implement.py", line 55, in run
+    frames = get_frames(folder_name)
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/utils/visualizer.py", line 17, in get_frames
+    .run(capture_stdout=True, capture_stderr=True)
+  File "/home/toonies/miniconda3/envs/autoshot/lib/python3.7/site-packages/ffmpeg/_run.py", line 325, in run
+    raise Error('ffmpeg', out, err)
+ffmpeg._run.Error: ffmpeg error (see stderr output for detail)
+
+2024-08-01 18:14:42,776 - src.utils.timer - INFO - DONE PROCESS PHASE EXPERIMENT IN 0.0533s
+2024-08-01 18:18:00,992 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Using weights from /home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Autoshot/weights/ckpt_0_200_0.pth.
+2024-08-01 18:18:01,036 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Current model has 90 paras, Update paras 90
+2024-08-01 18:18:01,056 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 18:18:01,056 - src.service.experiment.preprocess_experiment - ERROR - [Errno 17] File exists: 'data/images/Keyframes_L01/L01_V001'
+2024-08-01 18:18:01,057 - src.service.experiment.preprocess_experiment - ERROR - Traceback (most recent call last):
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/experiment/preprocess_experiment.py", line 17, in run
+    self.predictor.predict()
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/utils/timer.py", line 29, in wraper
+    result = func(*args, **kwargs)
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/predictor/preprocess_predictor.py", line 13, in predict
+    self.model.run()
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Autoshot/implement.py", line 51, in run
+    os.makedirs(folder_path)
+  File "/home/toonies/miniconda3/envs/autoshot/lib/python3.7/os.py", line 223, in makedirs
+    mkdir(name, mode)
+FileExistsError: [Errno 17] File exists: 'data/images/Keyframes_L01/L01_V001'
+
+2024-08-01 18:18:01,057 - src.utils.timer - INFO - DONE PROCESS PHASE EXPERIMENT IN 0.0014s
+2024-08-01 18:18:10,944 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Using weights from /home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Autoshot/weights/ckpt_0_200_0.pth.
+2024-08-01 18:18:10,974 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Current model has 90 paras, Update paras 90
+2024-08-01 18:18:10,997 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 18:18:11,051 - src.service.experiment.preprocess_experiment - ERROR - ffmpeg error (see stderr output for detail)
+2024-08-01 18:18:11,052 - src.service.experiment.preprocess_experiment - ERROR - Traceback (most recent call last):
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/experiment/preprocess_experiment.py", line 17, in run
+    self.predictor.predict()
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/utils/timer.py", line 29, in wraper
+    result = func(*args, **kwargs)
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/predictor/preprocess_predictor.py", line 13, in predict
+    self.model.run()
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Autoshot/implement.py", line 55, in run
+    frames = get_frames(folder_name)
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/utils/visualizer.py", line 17, in get_frames
+    .run(capture_stdout=True, capture_stderr=True)
+  File "/home/toonies/miniconda3/envs/autoshot/lib/python3.7/site-packages/ffmpeg/_run.py", line 325, in run
+    raise Error('ffmpeg', out, err)
+ffmpeg._run.Error: ffmpeg error (see stderr output for detail)
+
+2024-08-01 18:18:11,052 - src.utils.timer - INFO - DONE PROCESS PHASE EXPERIMENT IN 0.0551s
+2024-08-01 18:18:41,708 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Using weights from /home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Autoshot/weights/ckpt_0_200_0.pth.
+2024-08-01 18:18:41,750 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Current model has 90 paras, Update paras 90
+2024-08-01 18:18:41,773 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 18:18:41,773 - src.service.experiment.preprocess_experiment - ERROR - [Errno 17] File exists: 'data/images/Keyframes_L01/L01_V001'
+2024-08-01 18:18:41,774 - src.service.experiment.preprocess_experiment - ERROR - Traceback (most recent call last):
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/experiment/preprocess_experiment.py", line 17, in run
+    self.predictor.predict()
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/utils/timer.py", line 29, in wraper
+    result = func(*args, **kwargs)
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/predictor/preprocess_predictor.py", line 13, in predict
+    self.model.run()
+  File "/home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Autoshot/implement.py", line 51, in run
+    os.makedirs(folder_path)
+  File "/home/toonies/miniconda3/envs/autoshot/lib/python3.7/os.py", line 223, in makedirs
+    mkdir(name, mode)
+FileExistsError: [Errno 17] File exists: 'data/images/Keyframes_L01/L01_V001'
+
+2024-08-01 18:18:41,774 - src.utils.timer - INFO - DONE PROCESS PHASE EXPERIMENT IN 0.0017s
+2024-08-01 18:18:52,134 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Using weights from /home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Autoshot/weights/ckpt_0_200_0.pth.
+2024-08-01 18:18:52,162 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Current model has 90 paras, Update paras 90
+2024-08-01 18:18:52,183 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 18:20:41,857 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Using weights from /home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Autoshot/weights/ckpt_0_200_0.pth.
+2024-08-01 18:21:16,725 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Using weights from /home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Autoshot/weights/ckpt_0_200_0.pth.
+2024-08-01 18:21:19,491 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Current model has 90 paras, Update paras 90
+2024-08-01 18:21:19,540 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 18:22:08,952 - src.service.data_preprocess.utils.utils - INFO - Saved all images on data/images/Keyframes_L01/L01_V001
+2024-08-01 18:22:08,956 - src.utils.timer - INFO - DONE PROCESS PHASE TEST IN 49.4158s
+2024-08-01 18:22:08,956 - src.utils.timer - INFO - DONE PROCESS PHASE EXPERIMENT IN 49.4162s
+2024-08-01 18:22:23,707 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Using weights from /home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Autoshot/weights/ckpt_0_200_0.pth.
+2024-08-01 18:22:26,474 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Current model has 90 paras, Update paras 90
+2024-08-01 18:22:26,509 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 18:23:16,166 - src.service.data_preprocess.utils.utils - INFO - Saved all images on data/images/Keyframes_L01/L01_V001
+2024-08-01 18:23:16,171 - src.utils.timer - INFO - DONE PROCESS PHASE TEST IN 49.6610s
+2024-08-01 18:23:16,171 - src.utils.timer - INFO - DONE PROCESS PHASE EXPERIMENT IN 49.6615s

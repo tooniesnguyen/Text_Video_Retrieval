@@ -1,0 +1,6 @@
+dependency-injector
+colorlog
+thespian
+PyYAML
+threadpoolctl
+pretty-errors
