@@ -15,7 +15,7 @@ from src.service.data_preprocess.utils import Visualize2Image
 logger = register.get_tracking(__name__)
 
 
-class AutoShotImpl:
+class AutoShotImplement:
     def __init__(self, input_dir: str, output_dir: str):
 
         self.input_dir = input_dir
@@ -47,6 +47,7 @@ class AutoShotImpl:
     def run(self, visualize_result = False) -> None:
         video_paths = sorted(glob.glob(os.path.join(self.input_dir, "*mp4")))
         for video_path in video_paths:
+            logger.info("[AutoShot] Extracting frames from {}".format(video_path))
             folder_name = video_path.split('/')[-1].replace( '.mp4','')
             folder_path = self.output_dir + f'/{folder_name}'
             os.makedirs(folder_path, exist_ok= True)

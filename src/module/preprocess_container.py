@@ -6,13 +6,12 @@ from thespian.actors import ActorSystem
 
 from src.utils.constants import CONFIG_FILE
 from src.service.abstraction import Experiments, Predictor
-from src.service.predictor import preprocess_predictor
-from src.service.experiment import preprocess_experiment
+
 
 from src.service.predictor.preprocess_predictor import PredictorImpl
 from src.service.experiment.preprocess_experiment import ExperimentsImpl
-from src.service.data_preprocess.Transnetv2 import TransNetV2Implement
-from src.service.data_preprocess.Autoshot import AutoShotImpl
+# from src.service.data_preprocess.Transnetv2 import TransNetV2Implement
+from src.service.data_preprocess.Autoshot import AutoShotImplement
 
 from src.utils.logger import Logger
 
@@ -32,21 +31,22 @@ class ApplicationContainer(containers.DeclarativeContainer):
         log_clear_days=service_config.logger.log_clear_days
     )
 
-    transnetv2 = providers.Singleton(
-        TransNetV2Implement
-    )
+    # transnetv2 = providers.Singleton(
+    #     TransNetV2Implement
+    # )
 
     autoshot = providers.Singleton(
-        AutoShotImpl
+        AutoShotImplement
     )
 
     predictor = providers.AbstractSingleton(Predictor)
     predictor.override(
         providers.Singleton(
             PredictorImpl,
-            AutoShotImpl,
+            AutoShotImplement,
             service_config.data.path_video,
-            service_config.data.path_img
+            service_config.data.path_img,
+
         )
     )
 

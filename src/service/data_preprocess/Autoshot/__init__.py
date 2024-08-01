@@ -1,1 +1,1 @@
-from .implement import AutoShotImpl
+from .implement import AutoShotImplement

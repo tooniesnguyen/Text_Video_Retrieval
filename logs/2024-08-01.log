@@ -752,3 +752,26 @@ FileExistsError: [Errno 17] File exists: 'data/images/Keyframes_L01/L01_V001'
 2024-08-01 18:23:16,166 - src.service.data_preprocess.utils.utils - INFO - Saved all images on data/images/Keyframes_L01/L01_V001
 2024-08-01 18:23:16,171 - src.utils.timer - INFO - DONE PROCESS PHASE TEST IN 49.6610s
 2024-08-01 18:23:16,171 - src.utils.timer - INFO - DONE PROCESS PHASE EXPERIMENT IN 49.6615s
+2024-08-01 18:26:07,097 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Using weights from /home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Autoshot/weights/ckpt_0_200_0.pth.
+2024-08-01 18:26:25,102 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Using weights from /home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Autoshot/weights/ckpt_0_200_0.pth.
+2024-08-01 18:26:27,950 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Current model has 90 paras, Update paras 90
+2024-08-01 18:26:27,986 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 18:27:21,417 - src.service.data_preprocess.utils.utils - INFO - Saved all images on data/images/Keyframes_L01/L01_V001
+2024-08-01 18:27:54,241 - src.utils.timer - INFO - DONE PROCESS PHASE TEST IN 86.2554s
+2024-08-01 18:27:54,241 - src.utils.timer - INFO - DONE PROCESS PHASE EXPERIMENT IN 86.2560s
+2024-08-01 18:54:59,212 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Using weights from /home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Autoshot/weights/ckpt_0_200_0.pth.
+2024-08-01 18:55:02,517 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Current model has 90 paras, Update paras 90
+2024-08-01 18:55:02,584 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 18:55:54,357 - src.service.data_preprocess.utils.utils - INFO - Saved all images on data/images/Keyframes_L01/L01_V001
+2024-08-01 18:56:44,985 - src.service.data_preprocess.utils.utils - INFO - Saved all images on data/images/Keyframes_L01/L01_V002
+2024-08-01 18:56:44,990 - src.utils.timer - INFO - DONE PROCESS PHASE TEST IN 102.4055s
+2024-08-01 18:56:44,990 - src.utils.timer - INFO - DONE PROCESS PHASE EXPERIMENT IN 102.4062s
+2024-08-01 18:57:59,076 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Using weights from /home/toonies/Learn/Text_Video_Retrieval/src/service/data_preprocess/Autoshot/weights/ckpt_0_200_0.pth.
+2024-08-01 18:58:01,862 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Current model has 90 paras, Update paras 90
+2024-08-01 18:58:01,898 - src.service.experiment.preprocess_experiment - INFO - Start predicting !
+2024-08-01 18:58:01,898 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Extracting frames from data/videos/Keyframes_L01/L01_V001.mp4
+2024-08-01 18:58:55,469 - src.service.data_preprocess.utils.utils - INFO - Saved all images on data/images/Keyframes_L01/L01_V001
+2024-08-01 18:58:55,470 - src.service.data_preprocess.Autoshot.implement - INFO - [AutoShot] Extracting frames from data/videos/Keyframes_L01/L01_V002.mp4
+2024-08-01 18:59:48,932 - src.service.data_preprocess.utils.utils - INFO - Saved all images on data/images/Keyframes_L01/L01_V002
+2024-08-01 18:59:48,937 - src.utils.timer - INFO - DONE PROCESS PHASE TEST IN 107.0396s
+2024-08-01 18:59:48,938 - src.utils.timer - INFO - DONE PROCESS PHASE EXPERIMENT IN 107.0400s
