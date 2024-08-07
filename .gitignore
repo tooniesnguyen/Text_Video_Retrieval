@@ -1,6 +1,7 @@
 data/*
 !data/get_data.sh
 *.pth
+!ckpt_0_200_0.pth
 *.ttf
 *__pycache__
 .vscode
