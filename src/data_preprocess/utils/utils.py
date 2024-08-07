@@ -1,4 +1,12 @@
 import numpy as np
+from pathlib import Path
+import sys
+
+FILE = Path(__file__).resolve()
+ROOT = FILE.parents[2]
+if str(ROOT) not in sys.path:
+    sys.path.append(str(ROOT))
+
 from src.utils.logger import Logger, register
 import cv2
 

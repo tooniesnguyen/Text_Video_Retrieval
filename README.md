@@ -2,6 +2,8 @@
 AI Challenge 2024
 
 
+
+
 ## Tree folder
 
 ```
@@ -41,6 +43,18 @@ AI Challenge 2024
 |---README.md
 ```
 
+# Tutorial
+
+## Create fake dataset
+- Move to `data` folder
+```
+cd data 
+bash get_data.sh
+```
+- Sau khi chạy lệnh xong sẽ có folder video theo như cấu trúc cây thư mục trên
+  
+## [Extract video to keyframe (AutoShot)](./src/data_preprocess/REAME.md)
+- Sau khi chạy xong phần này mn sẽ nhận được một bộ cấu trúc tập data giả được phân bố theo cây thư mục giống lúc thi
 
 # References
 - https://github.com/Syun1208/text-video-retrieval
