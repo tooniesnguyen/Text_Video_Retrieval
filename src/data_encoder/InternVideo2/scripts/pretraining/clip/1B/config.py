@@ -75,10 +75,10 @@ model = dict(
     freeze_text=True,
     open_text_projection=False,
     open_text_lora=False,
-    tokenizer_path="/home/toonies/Learn/Text_Video_Retrieval/src/data_encoder/InternVideo2/weights/chinese_alpaca_lora_7b",
-    vision_ckpt_path="/home/toonies/Learn/Text_Video_Retrieval/src/data_encoder/InternVideo2/weights/InternVideo2-stage2_1b-224p-f4.pt",
+    tokenizer_path="/home/hoangtv/Desktop/Nhan_CDT/CERBERUS/research/Text_Video_Retrieval/src/data_encoder/InternVideo2/weights/chinese_alpaca_lora_7b",
+    vision_ckpt_path="/home/hoangtv/Desktop/Nhan_CDT/CERBERUS/research/Text_Video_Retrieval/src/data_encoder/InternVideo2/weights/InternVideo2-stage2_1b-224p-f4.pt",
     load_vision_ckpt_from_internvideo2_stage2=True,
-    text_ckpt_path="/home/toonies/Learn/Text_Video_Retrieval/src/data_encoder/InternVideo2/weights/internvl_c_13b_224px.pth",
+    text_ckpt_path="/home/hoangtv/Desktop/Nhan_CDT/CERBERUS/research/Text_Video_Retrieval/src/data_encoder/InternVideo2/weights/internvl_c_13b_224px.pth",
 )
 
 criterion = dict(
