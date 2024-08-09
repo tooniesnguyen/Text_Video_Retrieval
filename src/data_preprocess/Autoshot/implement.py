@@ -28,8 +28,8 @@ logger = register.get_tracking("Autoshot.implement.py")
 
 ####################### ArgumentParser ##############################
 parser = argparse.ArgumentParser(description='AUTOSHOT')
-parser.add_argument('--input_dir', default='/home/toonies/Learn/Text_Video_Retrieval/data/videos/Keyframes_L02', type=str, help= None)
-parser.add_argument('--output_dir', default='/home/toonies/Learn/Text_Video_Retrieval/data/images', type=str, help= None)
+parser.add_argument('--input_dir', default='/home/hoangtv/Desktop/Nhan_CDT/CERBERUS/research/Text_Video_Retrieval/data/videos/Keyframes_L02', type=str, help= None)
+parser.add_argument('--output_dir', default='/home/hoangtv/Desktop/Nhan_CDT/CERBERUS/research/Text_Video_Retrieval/data/images', type=str, help= None)
 args = parser.parse_args()
 ####################################################################
 
