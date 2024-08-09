@@ -5,14 +5,7 @@ import io
 
 import torch
 from torch import nn
-from pathlib import Path
-import sys
 
-FILE = Path(__file__).resolve()
-ROOT = FILE.parents[1]
-if str(ROOT) not in sys.path:
-    sys.path.append(str(ROOT))
-    
 from models.backbones.internvideo2 import pretrain_internvideo2_1b_patch14_224
 from models.backbones.bert.builder import build_bert
 from models.criterions import get_sim
