@@ -1,0 +1,10 @@
+data/*
+!data/get_data.sh
+*.pth
+*.pt
+!ckpt_0_200_0.pth
+*.ttf
+*__pycache__
+.vscode
+reports
+logs/
