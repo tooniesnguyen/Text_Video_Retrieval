@@ -20,7 +20,7 @@ from src.data_preprocess.utils import predictions_to_scenes
 from src.data_preprocess.utils import Result2Text
 from src.data_preprocess.utils import Result2Image
 from src.data_preprocess.utils import Visualize2Image
-
+from tqdm import tqdm
 
 from src.utils.logger import register
 logger = register.get_tracking("Autoshot.implement.py")
@@ -28,8 +28,8 @@ logger = register.get_tracking("Autoshot.implement.py")
 
 ####################### ArgumentParser ##############################
 parser = argparse.ArgumentParser(description='AUTOSHOT')
-parser.add_argument('--input_dir', default='/home/hoangtv/Desktop/Nhan_CDT/CERBERUS/research/Text_Video_Retrieval/data/videos/Keyframes_L02', type=str, help= None)
-parser.add_argument('--output_dir', default='/home/hoangtv/Desktop/Nhan_CDT/CERBERUS/research/Text_Video_Retrieval/data/images', type=str, help= None)
+parser.add_argument('--i', default='/media/hoangtv/New Volume/backup/data_aic2024/videos/Videos_L01', type=str, help= "Input Dir")
+parser.add_argument('--o', default='/media/hoangtv/New Volume/backup/data_aic2024/images', type=str, help= "Output Dir")
 args = parser.parse_args()
 ####################################################################
 
@@ -65,7 +65,7 @@ class AutoShotImplement:
 
     def run(self, visualize_result = False) -> None:
         video_paths = sorted(glob.glob(os.path.join(self.input_dir, "*mp4")))
-        for video_path in video_paths:
+        for video_path in tqdm(video_paths):
             logger.info("[AutoShot] Extracting frames from {}".format(video_path))
             folder_name = video_path.split('/')[-1].replace( '.mp4','')
             folder_path = self.output_dir + f'/{folder_name}'
@@ -88,8 +88,8 @@ class AutoShotImplement:
                 visualize_result = False
 
 def main():
-    input_dir = args.input_dir
-    output_dir = args.output_dir
+    input_dir = args.i
+    output_dir = args.o
     model_impl = AutoShotImplement(input_dir, output_dir)
     model_impl.run()
 

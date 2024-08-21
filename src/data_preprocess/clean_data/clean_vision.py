@@ -16,7 +16,7 @@ from src.utils.logger import register
 logger = register.get_tracking("clean_data.clean_vision.py")
 
 import argparse
-####################### ArgumentParser ##############################
+####################### ArgumentParser #############################
 parser = argparse.ArgumentParser(description='Clean Vision')
 parser.add_argument('--input_dir', default='/home/toonies/Learn/Text_Video_Retrieval/data/images/Keyframes_L02', type=str, help= None)
 args = parser.parse_args()
@@ -27,7 +27,7 @@ def remove_images_not_in_keep_list(all_images, keep_images):
         if image_path not in keep_images:
             try:
                 os.remove(image_path)
-                logger.info(f"Deleted image: {image_path}")
+                logger.info(f"[Clean Vision] Deleted image: {image_path}")
                 all_images.remove(image_path)  # Loại bỏ khỏi danh sách tất cả các ảnh
             except OSError as e:
                 logger.info(f"Error deleting image {image_path}: {e}")
