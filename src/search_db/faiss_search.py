@@ -50,8 +50,8 @@ class MyFaiss(SearchDB):
         if detect(text) == 'vi':
             text = self.translate(text)
         print("Text translation: ", text)
-        text_features = self.encoder_model.text_encoder(text) 
-        scores, idx_image = self.index.search(text_features, k=k)
+        text_feature = self.encoder_model.text_encoder(text) 
+        scores, idx_image = self.index.search(text_feature, k=k)
         print("Idx images", idx_image)
         result_strings = list(map(lambda idx: self.dict_json[idx] if 0 <= idx < len(self.dict_json) else None, idx_image[-1]))
         return result_strings

@@ -6,9 +6,8 @@ class SearchDB(ABC):
     
     @abstractmethod
     def __init__(self, bin_path: str, json_path: str, 
-                 model: EncoderModel, show_time_compute: bool):
+                 model: EncoderModel, show_time_compute: bool, *args):
         pass
-    
     
     @abstractmethod
     def search_query(self, query: str, k: int) -> List:
