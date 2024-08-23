@@ -44,5 +44,7 @@ class FaissDB(StoreDB):
         for npy_file in npy_files_sorted:
             feats = np.load(npy_file)
             self.index.add(feats)
+        
+        logger.info(f"Saved at: faiss_{self.model_name}_{self.method}.bin")
         faiss.write_index(self.index, os.path.join(bin_path, f"faiss_{self.model_name}_{self.method}.bin"))
         

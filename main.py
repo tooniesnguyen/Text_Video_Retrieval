@@ -1,22 +1,15 @@
+from src.data_retrieval.faiss_search import MyFaiss
+from src.data_encoder.clip_module.model import CLIP_Model
+
 import warnings
 warnings.filterwarnings("ignore")
 
-from dependency_injector.wiring import Provide, inject
-from src.utils.debugger import pretty_errors
-from src.module.preprocess_container import ApplicationContainer
-from src.service.experiment.preprocess_experiment import ExperimentsImpl
-from threadpoolctl import threadpool_limits, threadpool_info
 
-def create_container(environment: str):
-    container = ApplicationContainer()
-    container.wire(modules=[environment])
+clip_model =  CLIP_Model(device = "cuda")
 
-@inject
-def run(experiments: ExperimentsImpl = Provide[ApplicationContainer.experiments]) -> None:
-    experiments.run()
+search = MyFaiss(bin_path = "/home/toonies/Learn/Text_Video_Retrieval/data/dicts/faiss_CLIP_cosine.bin",
+                    json_path = "/home/toonies/Learn/Text_Video_Retrieval/data/dicts/keyframes_id_search.json",
+                    encoder_model= clip_model)
 
-create_container(environment=__name__)
-
-if __name__ == '__main__':
-    with threadpool_limits(limits=1, user_api='openmp'):
-        run()
+text_query = "Hai nguoi dang dung noi chuyen"
+search.search_query(text_query, k=12)

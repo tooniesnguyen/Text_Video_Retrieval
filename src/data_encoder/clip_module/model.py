@@ -14,11 +14,10 @@ if str(ROOT) not in sys.path:
     
 from src.abstraction.encoder_model import EncoderModel
 
-from src.abstraction.store_db import StoreDB
 from src.utils.logger import register
 logger = register.get_tracking("CLIP.implement.py")
 
-class CLIPModel(EncoderModel):
+class CLIP_Model(EncoderModel):
     def __init__(self, device: str) -> None:
         self.device = device
         self.__model, self.__preprocess = self.load_model()
