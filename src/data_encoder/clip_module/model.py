@@ -24,7 +24,7 @@ class CLIP_Model(EncoderModel):
         
     def load_model(self):
         print("Loading model")
-        return clip.load("ViT-B/32", device=self.device)
+        return clip.load("ViT-B/32", device=self.device, jit=False)
 
     def text_encoder(self, text: str):
         text = clip.tokenize([text]).to(self.device)
