@@ -1,0 +1,2 @@
+***(myenv) (base) hoangtv@hoangtv:~/Desktop/Long/autoshot_filter$ python main.py --keyframes-dir './keyframes' --path-result './results'
+Filter by Covariate Shift Detection: 100%|██████████████████████████████████████████████████████████████████████████| 2/2 [01:45<00:00, 52.80s/it]***
