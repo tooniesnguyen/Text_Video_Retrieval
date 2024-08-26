@@ -28,7 +28,7 @@ text_candidates = ["A boy are playing with a dog.",
                    "A person bundled up in a blanket walks through the snowy landscape, enjoying the serene winter scenery."]
 config = Config.from_file('utils/internvideo2_stage2_config.py')
 config = eval_dict_leaf(config)
-model_pth = '/home/hoangtv/Desktop/Nhan_CDT/CERBERUS/research/Text_Video_Retrieval/src/data_encoder/InternVideo2/weights'
+model_pth = 'weights'
 config['pretrained_path'] = model_pth
 
 
