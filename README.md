@@ -46,10 +46,11 @@ HOW TO USE?
 First run "F:\Text_Video_Retrieval\utils\ocr_processing\OCR_Extract.py" 
 
 by using this code:
+
 python OCR_Extract.py --root_path path root of data --save_path path to save (Code just rn with one GPU)
 
 than run code to combine all file txt:
-python Combine_file.py --root_dir root have folder which have txt file inside --output_file path to save txt file
+python Combine_file.py --root_dir root txt --output_file path to save
 
 example :
 python Combine_file.py --root_dir "/content/Ocr/" --output_file "/content/info_ocr.txt"
