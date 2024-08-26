@@ -15,7 +15,7 @@ if str(ROOT) not in sys.path:
 from src.abstraction.encoder_model import EncoderModel
 
 class BLIP2Model(EncoderModel):
-    def __init__(self, device: str):
+    def __init__(self, device: str, *args):
         self.device = device
         self.__model, self.__vis_processors, self.__text_processors = self.load_model()
         

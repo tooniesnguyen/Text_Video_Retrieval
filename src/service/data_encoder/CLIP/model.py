@@ -18,8 +18,7 @@ from src.utils.logger import register
 logger = register.get_tracking("CLIP.implement.py")
 
 class CLIPModel(EncoderModel):
-    def __init__(self, model_name: str, device: str) -> None:
-        self.model_name = model_name
+    def __init__(self, device: str, *args) -> None:
         self.device = device
         self.__model, self.__preprocess = self.load_model()
         

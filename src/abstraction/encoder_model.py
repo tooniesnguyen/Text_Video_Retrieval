@@ -4,7 +4,7 @@ import numpy as np
 
 class EncoderModel(ABC):
     @abstractmethod
-    def __init__(self, model_name: str, device: str, *args):
+    def __init__(self, device: str, *args):
         pass
     
     @abstractmethod
