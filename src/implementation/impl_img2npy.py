@@ -14,7 +14,7 @@ from service.data_storing.feat_storing import StoreFeatureModel
 ####################### ArgumentParser ##############################
 parser = argparse.ArgumentParser(description='Encoder Model')
 parser.add_argument('--i', default='/home/toonies/Learn/Text_Video_Retrieval/data/images/Keyframes_L01', type=str, help= "Input Dir")
-parser.add_argument('--o', default='/home/toonies/Learn/Text_Video_Retrieval/data/dicts/npy/clip', type=str, help= "Output Dir")
+parser.add_argument('--o', default='/home/toonies/Learn/Text_Video_Retrieval/data/dicts/npy/blip2', type=str, help= "Output Dir")
 args = parser.parse_args()
 ####################################################################
 
