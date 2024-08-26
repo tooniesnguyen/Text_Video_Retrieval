@@ -42,6 +42,25 @@ AI Challenge 2024
 ```
 
 
+HOW TO USE?
+First run "F:\Text_Video_Retrieval\utils\ocr_processing\OCR_Extract.py" 
+
+by using this code:
+python OCR_Extract.py --root_path path root of data --save_path path to save (Code just rn with one GPU)
+
+than run code to combine all file txt:
+python Combine_file.py --root_dir root have folder which have txt file inside --output_file path to save txt file
+
+example :
+python Combine_file.py --root_dir "/content/Ocr/" --output_file "/content/info_ocr.txt"
+
+next, run:
+python process_ocr.py --ocr_inf path txt --ocr_save_np path save npy
+example:
+python process_ocr.py --ocr_inf /content/info_ocr.txt --ocr_save_np /content/test2/
+
+
+
 # References
 - https://github.com/Syun1208/text-video-retrieval
 - https://github.com/AIVIETNAMResearch/Video-Text-Retrieval

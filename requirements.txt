@@ -2,8 +2,8 @@ colorlog
 thespian
 PyYAML
 pretty-errors
-faiss-cpu
-numpy
+faiss-gpu
+numpy==1.21.6
 regex
 tqdm
 langdetect
@@ -16,3 +16,4 @@ scipy
 matplotlib
 pandas
 tqdm
+torchvision==0.13
