@@ -47,16 +47,16 @@ First run "F:\Text_Video_Retrieval\utils\ocr_processing\OCR_Extract.py"
 
 by using this code:
 
-python OCR_Extract.py --root_path path root of data --save_path path to save (Code just rn with one GPU)
+python OCR_Extract.py --root_path [path root of data] --save_path [path to save] (Code just rn with one GPU)
 
 than run code to combine all file txt:
-python Combine_file.py --root_dir root txt --output_file path to save
+python Combine_file.py --root_dir [root txt] --output_file [path to save]
 
 example :
 python Combine_file.py --root_dir "/content/Ocr/" --output_file "/content/info_ocr.txt"
 
 next, run:
-python process_ocr.py --ocr_inf path txt --ocr_save_np path save npy
+python process_ocr.py --ocr_inf [path txt] --ocr_save_np [path save npy]
 example:
 python process_ocr.py --ocr_inf /content/info_ocr.txt --ocr_save_np /content/test2/
 
