@@ -1,0 +1,11 @@
+python impl_img2npy.py --i /media/hoangtv/"New Volume"/backup/data_aic2024/images/Keyframes_L02 --o /home/hoangtv/Desktop/Nhan_CDT/CERBERUS/research/Text_Video_Retrieval/data/dicts/npy/clip
+python impl_img2npy.py --i /media/hoangtv/"New Volume"/backup/data_aic2024/images/Keyframes_L03 --o /home/hoangtv/Desktop/Nhan_CDT/CERBERUS/research/Text_Video_Retrieval/data/dicts/npy/clip
+python impl_img2npy.py --i /media/hoangtv/"New Volume"/backup/data_aic2024/images/Keyframes_L04 --o /home/hoangtv/Desktop/Nhan_CDT/CERBERUS/research/Text_Video_Retrieval/data/dicts/npy/clip
+python impl_img2npy.py --i /media/hoangtv/"New Volume"/backup/data_aic2024/images/Keyframes_L05 --o /home/hoangtv/Desktop/Nhan_CDT/CERBERUS/research/Text_Video_Retrieval/data/dicts/npy/clip
+python impl_img2npy.py --i /media/hoangtv/"New Volume"/backup/data_aic2024/images/Keyframes_L06 --o /home/hoangtv/Desktop/Nhan_CDT/CERBERUS/research/Text_Video_Retrieval/data/dicts/npy/clip
+python impl_img2npy.py --i /media/hoangtv/"New Volume"/backup/data_aic2024/images/Keyframes_L07 --o /home/hoangtv/Desktop/Nhan_CDT/CERBERUS/research/Text_Video_Retrieval/data/dicts/npy/clip
+python impl_img2npy.py --i /media/hoangtv/"New Volume"/backup/data_aic2024/images/Keyframes_L08 --o /home/hoangtv/Desktop/Nhan_CDT/CERBERUS/research/Text_Video_Retrieval/data/dicts/npy/clip
+python impl_img2npy.py --i /media/hoangtv/"New Volume"/backup/data_aic2024/images/Keyframes_L09 --o /home/hoangtv/Desktop/Nhan_CDT/CERBERUS/research/Text_Video_Retrieval/data/dicts/npy/clip
+python impl_img2npy.py --i /media/hoangtv/"New Volume"/backup/data_aic2024/images/Keyframes_L10 --o /home/hoangtv/Desktop/Nhan_CDT/CERBERUS/research/Text_Video_Retrieval/data/dicts/npy/clip
+python impl_img2npy.py --i /media/hoangtv/"New Volume"/backup/data_aic2024/images/Keyframes_L11 --o /home/hoangtv/Desktop/Nhan_CDT/CERBERUS/research/Text_Video_Retrieval/data/dicts/npy/clip
+python impl_img2npy.py --i /media/hoangtv/"New Volume"/backup/data_aic2024/images/Keyframes_L12 --o /home/hoangtv/Desktop/Nhan_CDT/CERBERUS/research/Text_Video_Retrieval/data/dicts/npy/clip
