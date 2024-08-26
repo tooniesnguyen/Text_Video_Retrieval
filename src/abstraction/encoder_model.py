@@ -4,11 +4,11 @@ import numpy as np
 
 class EncoderModel(ABC):
     @abstractmethod
-    def __init__(self, device, *args):
+    def __init__(self, model_name: str, device: str, *args):
         pass
     
     @abstractmethod
-    def load_model(self):
+    def load_model(self) -> None:
         pass
     
     @abstractmethod
@@ -44,11 +44,5 @@ class EncoderModel(ABC):
         """
         pass
 
-    @abstractmethod
-    def convert_text2npy(self, text_file, npy_path):
-        pass
-    
-    @abstractmethod
-    def convert_text2npy(self, text_file, npy_path):
-        pass
+
     

@@ -14,7 +14,4 @@ class SearchDB(ABC):
         
         pass
         
-    @abstractmethod
-    def show_images(self, image_paths) -> None:
-        pass
-    
+

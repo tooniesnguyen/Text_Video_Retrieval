@@ -18,8 +18,8 @@ logger = register.get_tracking("Autoshot.implement.py")
 
 
 class FaissDB(StoreDB):
-    def __init__(self, model_name:str, feat_shape = 512, method = "cosine", *args):
-        self.model_name = model_name
+    def __init__(self, model_name, feat_shape = 512, method = "cosine", *args):
+        self.model_name = self.model_name
         self.method = method
         if self.method in 'L2':
             self.index = faiss.IndexFlatL2(feat_shape)
@@ -38,7 +38,7 @@ class FaissDB(StoreDB):
             return (prefix, number, suffix_number)
         return (file_name, 0, 0)
     
-    def convert_npy2bin(self, npy_path: str, bin_path: str):
+    def merge_npy2bin(self, npy_path: str, bin_path: str):
         npy_files = glob.glob(os.path.join(npy_path, "*.npy"))
         npy_files_sorted = sorted(npy_files, key=self.__sort_key)
         for npy_file in npy_files_sorted:
@@ -48,3 +48,4 @@ class FaissDB(StoreDB):
         logger.info(f"Saved at: faiss_{self.model_name}_{self.method}.bin")
         faiss.write_index(self.index, os.path.join(bin_path, f"faiss_{self.model_name}_{self.method}.bin"))
         
+        return None    

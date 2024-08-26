@@ -17,8 +17,9 @@ from src.abstraction.encoder_model import EncoderModel
 from src.utils.logger import register
 logger = register.get_tracking("CLIP.implement.py")
 
-class CLIP_Model(EncoderModel):
-    def __init__(self, device: str) -> None:
+class CLIPModel(EncoderModel):
+    def __init__(self, model_name: str, device: str) -> None:
+        self.model_name = model_name
         self.device = device
         self.__model, self.__preprocess = self.load_model()
         
@@ -42,7 +43,7 @@ class CLIP_Model(EncoderModel):
         
         return image_feat
     
-    def convert_image2npy(self, images_path, npy_path):
+    def save_image2npy(self, images_path, npy_path):
         video_paths = sorted(glob.glob(f"{images_path}/*/"))
         video_paths = ['/'.join(i.split('/')[:-1]) for i in video_paths]
         
@@ -62,5 +63,5 @@ class CLIP_Model(EncoderModel):
         logger.info(f"Saved at path {outfile}")
         return None
     
-    def convert_text2npy(self, text_file, npy_path):
+    def save_text2npy(self, text_file, npy_path):
         pass
