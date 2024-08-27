@@ -4,7 +4,7 @@ from src.utils.timer import time_complexity
 from src.utils.translate import Translation
 
 from src.utils.constants import WORK_DIR
-import src.reranking.ImageReward.ImageReward as RM
+import src.service.reranking.ImageReward.ImageReward as RM
 
 from langdetect import detect
 import matplotlib.pyplot as plt
@@ -18,7 +18,7 @@ import os
 
 
 
-class MyFaiss(SearchDB):
+class SearchFaiss(SearchDB):
     def __init__(self, bin_path: str, json_path: str, 
                  encoder_model = EncoderModel, show_time_compute = True):
         
@@ -37,19 +37,22 @@ class MyFaiss(SearchDB):
     def __load_bin(self, bin_path):
         return faiss.read_index(bin_path)
     
-    def show_images(self, image_paths):
+    def save_result(self, image_paths, save_path: str):
         fig = plt.figure(figsize=(15, 10))
         columns = int(math.sqrt(len(image_paths)))
         rows = int(np.ceil(len(image_paths)/columns))
 
-        for i in range(1, columns*rows +1):
+        for i in range(1, columns * rows + 1):
             img = plt.imread(image_paths[i - 1])
             ax = fig.add_subplot(rows, columns, i)
             ax.set_title('/'.join(image_paths[i - 1].split('/')[-3:]))
-
             plt.imshow(img)
             plt.axis("off")
-        plt.show()
+
+            # Save each subplot as an individual image file in the "./results" directory
+        output_path = os.path.join(save_path, f"result_{self.encoder_model.__class__.__name__}.png")
+        plt.savefig(output_path)
+        plt.close(fig)
         
     @time_complexity("Reranking Result")
     def __reranking_result(self, images_path: str, prompt: str) -> List:
@@ -75,6 +78,6 @@ class MyFaiss(SearchDB):
         
         imgs_path_return = [os.path.join(WORK_DIR, "data", image_path) for image_path in result_strings]
         if rerank:
-            imgs_path_return = self.__reranking_result(imgs_path_return, text)
+            result_strings = self.__reranking_result(result_strings, text)
         
-        return imgs_path_return
+        return result_strings

@@ -19,7 +19,7 @@ logger = register.get_tracking("Autoshot.implement.py")
 
 class FaissDB(StoreDB):
     def __init__(self, model_name, feat_shape = 512, method = "cosine", *args):
-        self.model_name = self.model_name
+        self.model_name = model_name
         self.method = method
         if self.method in 'L2':
             self.index = faiss.IndexFlatL2(feat_shape)

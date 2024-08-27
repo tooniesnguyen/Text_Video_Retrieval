@@ -1,5 +1,4 @@
 import argparse
-from faiss_storing import FaissDB
 
 from pathlib import Path
 import sys
@@ -9,11 +8,12 @@ ROOT = FILE.parents[2]
 if str(ROOT) not in sys.path:
     sys.path.append(str(ROOT))
     
+from src.service.data_storing.faiss_storing import FaissDB
 
 ####################### ArgumentParser ##############################
 parser = argparse.ArgumentParser(description='CLIP Encoder')
-parser.add_argument('--i', default='/home/toonies/Learn/Text_Video_Retrieval/data/dicts/npy/clip', type=str, help= "Input Dir")
-parser.add_argument('--o', default='/home/toonies/Learn/Text_Video_Retrieval/data/dicts', type=str, help= "Output Dir")
+parser.add_argument('--i', default='/home/hoangtv/Desktop/Nhan_CDT/CERBERUS/research/Text_Video_Retrieval/data/dicts/npy/clip', type=str, help= "Input Dir")
+parser.add_argument('--o', default='/home/hoangtv/Desktop/Nhan_CDT/CERBERUS/research/Text_Video_Retrieval/data/dicts/bin', type=str, help= "Output Dir")
 args = parser.parse_args()
 ####################################################################
 

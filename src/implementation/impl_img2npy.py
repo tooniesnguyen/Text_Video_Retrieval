@@ -9,7 +9,7 @@ if str(ROOT) not in sys.path:
     sys.path.append(str(ROOT))
     
 from src.service.data_encoder.BLIP2 import BLIP2Model
-from service.data_storing.feat_storing import StoreFeatureModel
+from src.service.data_storing.feat_storing import StoreFeatureModel
 
 ####################### ArgumentParser ##############################
 parser = argparse.ArgumentParser(description='Encoder Model')
