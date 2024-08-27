@@ -33,7 +33,7 @@ class CLIPModel(EncoderModel):
         return text_feat
 
     def image_encoder(self, image_path: str):
-        image = self.__preprocess(Image.open(image_path)).unsqueeze(0).to(self.device)
+        image = self.__preprocess(Image.open(image_path).convert("RGB")).unsqueeze(0).to(self.device)
         with torch.no_grad():
             image_feat = self.__model.encode_image(image)
             
@@ -41,3 +41,11 @@ class CLIPModel(EncoderModel):
         image_feat = image_feat.detach().cpu().numpy().astype(np.float16).flatten() 
         
         return image_feat
+
+
+if __name__ == "__main__":
+    clip_model = CLIPModel("cuda")
+    txt = clip_model.text_encoder("A man with a red hat")
+    image =clip_model.image_encoder("/home/toonies/Learn/Text_Video_Retrieval/data/images/Keyframes_L02/L02_V002/000471.jpg")
+    print("image shape ", image.shape) # (512, )
+    print("text shape ", txt.shape) # (1, 512)

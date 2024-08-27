@@ -27,6 +27,7 @@ class SearchFaiss(SearchDB):
         self.index = self.__load_bin(bin_path)
         self.dict_json = self.__read_json(json_path)
         self.translate = Translation()
+        self.rerank = False
         
         
     def __read_json(self, json_path):
@@ -50,7 +51,7 @@ class SearchFaiss(SearchDB):
             plt.axis("off")
 
             # Save each subplot as an individual image file in the "./results" directory
-        output_path = os.path.join(save_path, f"result_{self.encoder_model.__class__.__name__}.png")
+        output_path = os.path.join(save_path, f"result_{self.encoder_model.__class__.__name__}_rerank_{self.rerank}.png")
         plt.savefig(output_path)
         plt.close(fig)
         
@@ -68,6 +69,7 @@ class SearchFaiss(SearchDB):
     
     
     def search_query(self, text: str, k: int, rerank = False):
+        self.rerank = rerank
         if detect(text) == 'vi':
             text = self.translate(text)
         print("Text translation: ", text)
@@ -77,7 +79,7 @@ class SearchFaiss(SearchDB):
         result_strings = list(map(lambda idx: self.dict_json[idx] if 0 <= idx < len(self.dict_json) else None, idx_image[-1]))
         
         imgs_path_return = [os.path.join(WORK_DIR, "data", image_path) for image_path in result_strings]
-        if rerank:
+        if self.rerank:
             result_strings = self.__reranking_result(result_strings, text)
         
         return result_strings
