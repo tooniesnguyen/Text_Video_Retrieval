@@ -123,7 +123,7 @@ class InternVideo2Feats:
         fn = self.config.get('num_frames', 8)
         size_t = self.config.get('size_t', 224)
 
-        input_videos_path = os.path.join(input_data_path, "video")
+        input_videos_path = os.path.join(input_data_path, "videos")
         input_images_path = os.path.join(input_data_path, "images")
 
         if os.path.exists(input_videos_path) and os.path.exists(input_images_path):
