@@ -43,6 +43,8 @@ AI Challenge 2024
 
 
 HOW TO USE?
+
+
 First run "F:\Text_Video_Retrieval\utils\ocr_processing\OCR_Extract.py" 
 
 by using this code:
