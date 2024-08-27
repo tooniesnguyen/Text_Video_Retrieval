@@ -51,18 +51,23 @@ def extract_segment_frames_from_txt_file(video_frames, txt_path):
     print("len segment_frames_list: ",len(segment_frames_list))
     return segment_frames_list, segment_index_list
 
-def segment_images_by_segment_index(images_path_list, segment_index_list):
+def segment_images_by_segment_index(images_path_list, segment_index_list, video_frames):
 
     images_index_array = np.array([x.split('/')[-1].replace('.jpg', '') for x in images_path_list]).astype(int)
     images_path_list = np.array(images_path_list)
     # print(images_index_array)
-    segment_images_list = []
+    segment_images_path_list = []
+    segment_frame_list = []
     for segment_index in segment_index_list:
-        segment_images_list.append(images_path_list[np.where((images_index_array >= segment_index[0]) & (images_index_array <= segment_index[1]))])
+        segment_images_path = images_path_list[np.where((images_index_array >= segment_index[0]) & (images_index_array <= segment_index[1]))]
+        print("segment_images_path: ", segment_images_path)
+        segment_images_path_list.append(segment_images_path)
 
+        frames = [cv2.imread(str(img_path)) for img_path in segment_images_path]
+        segment_frame_list.append(frames)
     # print(segment_index_list)
     # print(segment_images_list)
-    return segment_images_list
+    return segment_images_path_list, segment_frame_list
 
 
 
@@ -103,7 +108,7 @@ class InternVideo2Feats:
             self.config = Config.from_file("utils/internvideo2_stage2_config.py")
             config = eval_dict_leaf(self.config)
 
-            model_pth = "weights"
+            model_pth = "weights/InternVideo2-stage2_1b-224p-f4.pt"
             self.config['pretrained_path'] = model_pth
 
             intern_model, self.tokenizer = setup_internvideo2(config)
@@ -125,6 +130,8 @@ class InternVideo2Feats:
 
         input_videos_path = os.path.join(input_data_path, "videos")
         input_images_path = os.path.join(input_data_path, "images")
+        print("input_videos_path: ", input_videos_path)
+        print("input_images_path: ", input_images_path)
 
         if os.path.exists(input_videos_path) and os.path.exists(input_images_path):
             video_paths = tqdm(os.listdir(input_videos_path))
@@ -146,16 +153,16 @@ class InternVideo2Feats:
                         video_frames = [x for x in _frames_from_video(video)]
 
                         segment_frames_list, segment_index_list = extract_segment_frames_from_txt_file(video_frames, txt_path)
-                        segment_images_list = segment_images_by_segment_index(images_path_list, segment_index_list)
-
+                        segment_images_list, _ = segment_images_by_segment_index(images_path_list, segment_index_list, video_frames)
 
                         re_feats = []
                         for segment_frames, segment_images, segment_index in zip(segment_frames_list, segment_images_list, segment_index_list):
                             frames_tensor = frames2tensor(segment_frames, fnum=fn, target_size=(size_t, size_t), device=self.device)
                             vid_feat = self.vlm.get_vid_feat(frames_tensor)
                             # label_probs = (100.0 * vid_feat @ txt_feat.T).softmax(dim=-1)
-                            vid_feat /= vid_feat.norm(dim=-1, keepdim=True)
+                            # vid_feat /= vid_feat.norm(dim=-1, keepdim=True)
                             vid_feat = vid_feat.detach().cpu().numpy().astype(np.float16).flatten()
+                            # print(vid_feat.shape)
                             for image_id in segment_images:
                                 re_feats.append(vid_feat)
 

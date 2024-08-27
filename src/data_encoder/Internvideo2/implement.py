@@ -5,8 +5,7 @@ import cv2
 
 import torch
 
-from utils.config_impl import (Config,
-                    eval_dict_leaf)
+from utils.config_impl import (Config,eval_dict_leaf)
 
 from utils.utils_impl import (retrieve_text,_frame_from_video, setup_internvideo2)
 # from transformers import BertTokenizer
@@ -14,7 +13,7 @@ from utils.utils_impl import (retrieve_text,_frame_from_video, setup_internvideo
 # tokenizer = BertTokenizer.from_pretrained('bert-large-uncased', force_download=True)
 
 
-video = cv2.VideoCapture('utils/example1.mp4')
+video = cv2.VideoCapture('src/data_encoder/Internvideo2/utils/example1.mp4')
 frames = [x for x in _frame_from_video(video)]
 text_candidates = ["A boy are playing with a dog.",
                    "A child are playing with a cat.",
@@ -26,9 +25,9 @@ text_candidates = ["A boy are playing with a dog.",
                    "A person in a blue jacket walks their pet on a leash, enjoying a peaceful winter walk among the trees.",
                    "A man in a gray sweater plays fetch with his dog in the snowy yard, throwing a toy and watching it run.",
                    "A person bundled up in a blanket walks through the snowy landscape, enjoying the serene winter scenery."]
-config = Config.from_file('utils/internvideo2_stage2_config.py')
+config = Config.from_file('src/data_encoder/Internvideo2/utils/internvideo2_stage2_config.py')
 config = eval_dict_leaf(config)
-model_pth = 'weights'
+model_pth = 'src/data_encoder/Internvideo2/weights/InternVideo2-stage2_1b-224p-f4.pt'
 config['pretrained_path'] = model_pth
 
 

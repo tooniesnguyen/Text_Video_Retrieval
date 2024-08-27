@@ -2,19 +2,23 @@ from abc import ABC, abstractmethod
 from typing import Dict, List
 import numpy as np
 
+from abc import ABC, abstractmethod
+from typing import Dict, List
+import numpy as np
+
 class EncoderModel(ABC):
     @abstractmethod
-    def __init__(self, device, *args):
+    def __init__(self, device: str, *args):
         pass
-    
+
     @abstractmethod
-    def load_model(self):
+    def load_model(self) -> None:
         pass
-    
+
     @abstractmethod
     def text_encoder(self, text: str) -> np.ndarray:
         """
-        This function is used to encode the text into features to store 
+        This function is used to encode the text into features to store
         or compare in the database
 
         Parameters
@@ -25,13 +29,13 @@ class EncoderModel(ABC):
         -------
         - `text_feature` (np.ndarray): the features after the forward encoder block
         """
-        
+
         pass
-    
+
     @abstractmethod
     def image_encoder(self, image_path: str) -> np.ndarray:
         """
-        This function is used to encode the image into features to store 
+        This function is used to encode the image into features to store
         or compare in the database
 
         Parameters
@@ -44,4 +48,5 @@ class EncoderModel(ABC):
         """
         pass
 
-    
+
+
