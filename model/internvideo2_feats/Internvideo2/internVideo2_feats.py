@@ -7,9 +7,13 @@ import torch
 
 from pathlib import Path
 import sys
-
 from numba import int16
 from tqdm import tqdm
+import warnings
+import glob
+import faiss
+import re
+import argparse
 
 FILE = Path(__file__).resolve()
 print(FILE)
@@ -21,9 +25,6 @@ print(str(ROOT))
 
 from utils.config_impl import (Config, eval_dict_leaf)
 from utils.utils_impl import (retrieve_text, _frame_from_video, setup_internvideo2)
-import warnings
-
-import glob
 
 def _frames_from_video(video):
     while video.isOpened():
@@ -32,9 +33,6 @@ def _frames_from_video(video):
             yield frame
         else:
             break
-
-video = cv2.VideoCapture('/home/nhi/HCMAI/Text_Video_Retrieval/data/dideo/Keyframes_L01/L01_V001.mp4')
-
 
 def read_txt(txt_path):
     ranges_list = []
@@ -57,7 +55,7 @@ def segment_images_by_segment_index(images_path_list, segment_index_list):
 
     images_index_array = np.array([x.split('/')[-1].replace('.jpg', '') for x in images_path_list]).astype(int)
     images_path_list = np.array(images_path_list)
-    print(images_index_array)
+    # print(images_index_array)
     segment_images_list = []
     for segment_index in segment_index_list:
         segment_images_list.append(images_path_list[np.where((images_index_array >= segment_index[0]) & (images_index_array <= segment_index[1]))])
@@ -65,7 +63,6 @@ def segment_images_by_segment_index(images_path_list, segment_index_list):
     # print(segment_index_list)
     # print(segment_images_list)
     return segment_images_list
-
 
 
 
@@ -85,29 +82,49 @@ def frames2tensor(vid_list, fnum=8, target_size=(224, 224), device=torch.device(
     vid_tube = torch.from_numpy(vid_tube).to(device, non_blocking=True).float()
     return vid_tube
 
+def process_name(name: int):
+    return "0"*(6-len(str(name))) + str(name)
+
+def sort_key(file_path):
+    file_name = os.path.basename(file_path)
+    match = re.match(r'(\D+)(\d+)_(V)(\d+)', file_name)
+    if match:
+        prefix = match.group(1)
+        number = int(match.group(2))
+        suffix_number = int(match.group(4))
+        return (prefix, number, suffix_number)
+    return (file_name, 0, 0)
 
 class InternVideo2Feats:
-    def __init__(self, device:str):
-        self.device = device
-        self.config = Config.from_file("utils/internvideo2_stage2_config.py")
-        config = eval_dict_leaf(self.config)
+    def __init__(self, device:str, active_model=True):
 
-        model_pth = "weights"
-        self.config['pretrained_path'] = model_pth
+        if active_model:
+            self.device = device
+            self.config = Config.from_file("utils/internvideo2_stage2_config.py")
+            config = eval_dict_leaf(self.config)
 
-        intern_model, self.tokenizer = setup_internvideo2(config)
-        self.vlm = intern_model.to(device)  #MODEL
-        pass
-    def create_npy(self, input_videos_path, input_images_path, output_npy_dir):
+            model_pth = "weights"
+            self.config['pretrained_path'] = model_pth
+
+            intern_model, self.tokenizer = setup_internvideo2(config)
+            self.vlm = intern_model.to(device)  #MODEL
+
+            print("Img2npy mode ----- Load model successfully")
+        else:
+            print("Npy2bin mode")
+
+    def create_npy(self, input_data_path:str, output_npy_dir):
         """create_npy files.
              Args:
-                 input_videos_path (str): The input videos path which contains: Keyframe_L01, Keyframe_L02,....
-                 input_images_path (str): The input images path which contains: Keyframe_L01, Keyframe_L02,....
+                 input_data_path (str): The input data path which contains: video and images folder
                  output_npy_dir (str): The output of .npy files
         """
 
         fn = self.config.get('num_frames', 8)
         size_t = self.config.get('size_t', 224)
+
+        input_videos_path = os.path.join(input_data_path, "video")
+        input_images_path = os.path.join(input_data_path, "images")
 
         if os.path.exists(input_videos_path) and os.path.exists(input_images_path):
             video_paths = tqdm(os.listdir(input_videos_path))
@@ -144,9 +161,6 @@ class InternVideo2Feats:
 
                         npy_dir = os.path.join(output_npy_dir, txt_path.split("/")[-1].replace(".txt", ''))
                         np.save(npy_dir, re_feats)
-                            # print(f"segment_index: {segment_index} ---", vid_feat.shape)
-
-
 
                     else:
                         warnings.warn(f"Can not find directory: {txt_path}")
@@ -155,17 +169,54 @@ class InternVideo2Feats:
             return
 
 
+    def create_bin(self, input_npy_path:str, output_bin_path:str, method="cosine", feature_shape=512):
+        """create bin files.
+             Args:
+                 input_npy_path (str): The input folder which contains all .npy files
+                 output_bin_path (str): The output of .bin files
+        """
+        if method in 'L2':
+            index = faiss.IndexFlatL2(feature_shape)
+        elif method in 'cosine':
+            index = faiss.IndexFlatIP(feature_shape)
+        else:
+            assert f"{method} not supported"
 
-        pass
-    def create_bin(self, input_dir, output_dir):
-        pass
+        npy_files = glob.glob(os.path.join(input_npy_path, "*.npy"))
+
+        if len(npy_files)==0:
+            assert f"Can not find any .npy file. Please check the input path!"
+
+        npy_files_sorted = sorted(npy_files, key=sort_key)
+
+        for npy_file in tqdm(npy_files_sorted):
+            feats = np.load(npy_file).astype(np.float32)
+            index.add(feats)
+
+        faiss.write_index(index, os.path.join(output_bin_path, f"faiss_InternVideo2_{method}.bin"))
+
+        print(f'Saved {os.path.join(output_bin_path, f"faiss_InternVideo2_{method}.bin")}')
+
+    # write_bin_file_ocr(bin_path=f"{WORK_DIR}/data/dicts/bin_clip", npy_path=f"{WORK_DIR}/data/dicts/npy_clip")
+
+
 
 def main():
-    input_videos_path = "/home/nhi/HCMAI/Text_Video_Retrieval/data/dideo"
-    input_images_path = "/home/nhi/HCMAI/Text_Video_Retrieval/data/frames"
-    output_npy_dir = "/home/nhi/HCMAI/Text_Video_Retrieval/data/dicts/npy_Internvideo2"
-    _InternVideo2Feats = InternVideo2Feats(device="cuda")
-    _InternVideo2Feats.create_npy(input_videos_path, input_images_path, output_npy_dir)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--img2npy", action='store_true')
+    parser.add_argument("--npy2bin", action='store_true')
+    parser.add_argument('-i', required=True, type=str, help="Input .npy or data/keyframes Dir")
+    parser.add_argument('-o', required=True, type=str, help="Output .npy or .bin Dir")
+    args = parser.parse_args()
+
+    if args.img2npy and not args.npy2bin:
+        _InternVideo2Feats = InternVideo2Feats(device="cuda", active_model=True)
+        _InternVideo2Feats.create_npy(input_data_path=args.i, output_npy_dir=args.o)
+
+    if args.npy2bin and not args.img2npy:
+        _InternVideo2Feats = InternVideo2Feats(device="cuda", active_model=False)
+        _InternVideo2Feats.create_bin(input_npy_path=args.i, output_bin_path=args.o)
+
 
 if __name__ == "__main__":
     main()
