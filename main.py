@@ -1,5 +1,5 @@
 from src.service.data_retrieval.faiss_search import SearchFaiss
-from src.service.data_encoder.CLIP import CLIPModel
+from src.service.data_encoder.InternVideo2 import EncoderInternVideo2
 import torch
 import os
 
@@ -10,10 +10,10 @@ warnings.filterwarnings("ignore")
 
 
 if __name__ == "__main__":
-    clip_model =  CLIPModel(device = "cuda")
+    clip_model =  EncoderInternVideo2(device = "cuda")
 
-    search = SearchFaiss(bin_path = "/home/toonies/Learn/Text_Video_Retrieval/data/dicts/bin/faiss_CLIP_cosine.bin",
-                        json_path = "/home/toonies/Learn/Text_Video_Retrieval/data/dicts/json/keyframes_id_search.json",
+    search = SearchFaiss(bin_path = "/home/hoangtv/Desktop/Nhan_CDT/CERBERUS/research/Text_Video_Retrieval/data/dicts/bin/faiss_InternVideo2_cosine.bin",
+                        json_path = "/home/hoangtv/Desktop/Nhan_CDT/CERBERUS/research/Text_Video_Retrieval/data/dicts/json/keyframes_id_search.json",
                         encoder_model= clip_model)
 
     text_query = "The man is wearing a red shirt and yellow hat"

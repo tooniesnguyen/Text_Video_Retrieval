@@ -51,9 +51,9 @@ class EncoderInternVideo2(EncoderModel):
     def load_model(self):
 
         print("Loading Config")
-        config = Config.from_file("src/data_encoder/Internvideo2/utils/internvideo2_stage2_config.py")
+        config = Config.from_file("/home/hoangtv/Desktop/Nhan_CDT/CERBERUS/research/Text_Video_Retrieval/src/service/data_encoder/InternVideo2/utils/internvideo2_stage2_config.py")
         config = eval_dict_leaf(config)
-        model_pth = "src/data_encoder/Internvideo2/weights/InternVideo2-stage2_1b-224p-f4.pt"
+        model_pth = "/home/hoangtv/Desktop/Nhan_CDT/CERBERUS/research/Text_Video_Retrieval/src/service/data_encoder/InternVideo2/weights/InternVideo2-stage2_1b-224p-f4.pt"
         config['pretrained_path'] = model_pth
 
         print("Loading Model")

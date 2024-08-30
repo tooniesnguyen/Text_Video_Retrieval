@@ -4,7 +4,7 @@ from src.utils.timer import time_complexity
 from src.utils.translate import Translation
 
 from src.utils.constants import WORK_DIR
-import src.service.reranking.ImageReward.ImageReward as RM
+# import src.service.reranking.ImageReward.ImageReward as RM
 
 from langdetect import detect
 import matplotlib.pyplot as plt

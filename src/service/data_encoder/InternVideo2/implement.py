@@ -2,42 +2,37 @@ import numpy as np
 import os
 import io
 import cv2
-
 import torch
 
-from utils.config_impl import (Config,eval_dict_leaf)
+# Corrected import paths
+from utils.config_impl import (Config, eval_dict_leaf)
+from utils.utils_impl import (retrieve_text, _frame_from_video, setup_internvideo2)
+print("Hello World1")
 
-from utils.utils_impl import (retrieve_text,_frame_from_video, setup_internvideo2)
-# from transformers import BertTokenizer
-
-# tokenizer = BertTokenizer.from_pretrained('bert-large-uncased', force_download=True)
-
-
-video = cv2.VideoCapture('src/data_encoder/Internvideo2/utils/example1.mp4')
+# Load video and process frames
+video = cv2.VideoCapture('/home/hoangtv/Desktop/Nhan_CDT/CERBERUS/research/Text_Video_Retrieval/src/service/data_encoder/InternVideo2/utils/example1.mp4')
 frames = [x for x in _frame_from_video(video)]
-text_candidates = ["A boy are playing with a dog.",
-                   "A child are playing with a cat.",
-                   "Two person are driving.",
-                   "A pet dog excitedly runs through the snowy yard, chasing a toy thrown by its owner.",
-                   "A person stands on the snowy floor, pushing a sled loaded with blankets, preparing for a fun-filled ride.",
-                   "A man in a gray hat and coat walks through the snowy yard, carefully navigating around the trees.",
-                   "A playful dog slides down a snowy hill, wagging its tail with delight.",
-                   "A person in a blue jacket walks their pet on a leash, enjoying a peaceful winter walk among the trees.",
-                   "A man in a gray sweater plays fetch with his dog in the snowy yard, throwing a toy and watching it run.",
-                   "A person bundled up in a blanket walks through the snowy landscape, enjoying the serene winter scenery."]
-config = Config.from_file('src/data_encoder/Internvideo2/utils/internvideo2_stage2_config.py')
+
+# Sample text candidates for video retrieval
+text_candidates = ["A boy is playing with a dog.", "A child is playing with a cat."]
+
+# Load and configure the model
+config = Config.from_file('/home/hoangtv/Desktop/Nhan_CDT/CERBERUS/research/Text_Video_Retrieval/src/service/data_encoder/InternVideo2/utils/internvideo2_stage2_config.py')
+print("Hello World12")
+
 config = eval_dict_leaf(config)
+print("Hello World1")
+
 model_pth = 'src/data_encoder/Internvideo2/weights/InternVideo2-stage2_1b-224p-f4.pt'
 config['pretrained_path'] = model_pth
 
-
+# Setup InternVideo2 model and tokenizer
 intern_model, tokenizer = setup_internvideo2(config)
 
-texts, probs = retrieve_text(frames, text_candidates, model=intern_model, topk=10, config=config)
+# Retrieve text descriptions from frames
+texts, probs = retrieve_text(frames, text_candidates, model=intern_model, topk=1, config=config)
 
+# Display results
 for t, p in zip(texts, probs):
     print(f'text: {t} ~ prob: {p:.4f}')
-    
-    
-    
-print("Hello World")
+
