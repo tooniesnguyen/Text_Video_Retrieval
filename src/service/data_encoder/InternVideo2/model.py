@@ -14,8 +14,7 @@ import sys
 # import faiss
 # import re
 # import argparse
-from src.data_encoder.Internvideo2.utils.config_impl import (Config, eval_dict_leaf)
-from src.data_encoder.Internvideo2.utils.utils_impl import (retrieve_text, _frame_from_video, setup_internvideo2)
+
 
 FILE = Path(__file__).resolve()
 ROOT = FILE.parents[4]
@@ -23,6 +22,8 @@ if str(ROOT) not in sys.path:
     sys.path.append(str(ROOT))
 print(ROOT)
 
+from src.service.data_encoder.InternVideo2.utils.config_impl import (Config, eval_dict_leaf)
+from src.service.data_encoder.InternVideo2.utils.utils_impl import (retrieve_text, _frame_from_video, setup_internvideo2)
 from src.abstraction.encoder_model import EncoderModel
 # from src.utils.logger import register
 

@@ -28,5 +28,3 @@ cd csrc/fused_dense_lib && pip install .
 ```python
 cd csrc/layer_norm && pip install .
 ```
-
-### [Bin and Json file](https://drive.google.com/file/d/1UqX8AbbuE_Xvsv2ZigNnkrzv7Bg9kYN4/view)
