@@ -43,15 +43,20 @@ class SearchFaiss(SearchDB):
         columns = int(math.sqrt(len(image_paths)))
         rows = int(np.ceil(len(image_paths)/columns))
 
+        black_image = np.zeros((256, 256, 3))
+
         for i in range(1, columns * rows + 1):
-            img = plt.imread(image_paths[i - 1])
+            try:
+                img = plt.imread("/media/hoangtv/New Volume/backup/data_aic2024/"+image_paths[i - 1])
+            except:
+                img = black_image
             ax = fig.add_subplot(rows, columns, i)
             ax.set_title('/'.join(image_paths[i - 1].split('/')[-3:]))
             plt.imshow(img)
-            plt.axis("off")
+            plt.axis("off") 
 
             # Save each subplot as an individual image file in the "./results" directory
-        output_path = os.path.join(save_path, f"result_{self.encoder_model.__class__.__name__}_rerank_{self.rerank}.png")
+        output_path = os.path.join(save_path, f"{self.encoder_model.__class__.__name__}_{'rerank' if self.rerank else 'no_rerank'}.png")
         plt.savefig(output_path)
         plt.close(fig)
         
