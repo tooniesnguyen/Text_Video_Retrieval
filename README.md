@@ -43,6 +43,8 @@ AI Challenge 2024
 
 
 HOW TO USE?
+
+
 First run "F:\Text_Video_Retrieval\utils\ocr_processing\OCR_Extract.py" 
 
 by using this code:
@@ -56,9 +58,16 @@ example :
 python Combine_file.py --root_dir "/content/Ocr/" --output_file "/content/info_ocr.txt"
 
 next, run:
-python process_ocr.py --ocr_inf [path txt] --ocr_save_np [path save npy]
+
+python Ocr2Npy.py --ocr_inf [path of ocr file] --ocr_save_np [path to save npy] --combine  
+
+
 example:
-python process_ocr.py --ocr_inf /content/info_ocr.txt --ocr_save_np /content/test2/
+python /content/Ocr_for_AIC/utils/ocr_processing/Ocr2Npy.py --ocr_inf /content/info_ocr.txt --ocr_save_np /content/npy2 --combine 
+
+Finally:
+
+Custom link in OcrBin.py function and run
 
 
 
