@@ -36,6 +36,7 @@ class Translation:
             else self.translator.translate(text, dest=self.__to_lang).text
 
 translate = Translation()
+
 device = "cuda:0"
 print(device)
 model, preprocess = clip.load("ViT-B/16", device=device)
@@ -56,7 +57,7 @@ def process_ocr_files(ocr_inf, ocr_save_np, combine):
             if len(text) >= max_len:
                 max_len = len(text)
             print("max len of str is ", max_len)
-            text = clip.tokenize([text]).to(device)
+            text = clip.tokenize([text], truncate=True).to(device)
 
             with torch.no_grad():
                 text_features = model.encode_text(text).to(device)
