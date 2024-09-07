@@ -3,8 +3,7 @@ from typing import Dict, List
 import numpy as np
 
 class EncoderModel(ABC):
-    @abstractmethod
-    def __init__(self, device: str, *args):
+    def __init__(self, device: str, **kwargs):
         pass
     
     @abstractmethod

@@ -17,3 +17,5 @@ matplotlib
 pandas
 tqdm
 salesforce-lavis
+image-reward
+uvicorn==0.30.6

@@ -7,14 +7,21 @@ from fastapi.responses import JSONResponse
 
 from src.service.data_retrieval.faiss_search import SearchFaiss
 from src.service.data_encoder.CLIP import CLIPModel
+from src.service.data_encoder.BLIP2 import BLIP2Model
+from src.service.data_encoder.InternVideo2 import InternVideo2Model
+from src.utils.utils import load_yaml
+from src.utils.config import *
 
+import os
+from multiprocessing import Pool
 app = FastAPI()
 
 
-clip_model =  CLIPModel(device = "cuda")
 
-search = SearchFaiss(bin_path = "/home/toonies/Learn/Text_Video_Retrieval/data/dicts/bin/faiss_CLIP_cosine.bin",
-                    json_path = "/home/toonies/Learn/Text_Video_Retrieval/data/dicts/json/keyframes_id_search.json",
+clip_model =  CLIPModel(device = device)
+
+search = SearchFaiss(bin_path = CLIP_BIN,
+                    json_path = CLIP_JSON,
                         encoder_model= clip_model)
 
 class UserRequest(BaseModel):
@@ -38,4 +45,4 @@ async def text_retrieval(request: UserRequest):
     
 
 if __name__ == "__main__":
-    uvicorn.run("api:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run('api:app', host='0.0.0.0', port=8090, reload=True, workers=Pool()._processes)

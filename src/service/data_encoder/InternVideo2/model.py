@@ -43,7 +43,7 @@ def frames2tensor(vid_list, fnum=8, target_size=(224, 224), device=torch.device(
     vid_tube = torch.from_numpy(vid_tube).to(device, non_blocking=True).float()
     return vid_tube
 
-class EncoderInternVideo2(EncoderModel):
+class InternVideo2Model(EncoderModel):
     def __init__(self, device: str, *args) -> None:
         self.device = device
         self.__model, self.__config = self.load_model()

@@ -1,1 +1,1 @@
-from .model import EncoderInternVideo2
+from .model import InternVideo2Model

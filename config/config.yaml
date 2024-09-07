@@ -1,7 +1,15 @@
 logger:
   log_dir: 'logs/'
-  log_clear_days: 20
+  log_clear_days: 30
 
 data:
-  path_video: 'data/videos/Keyframes_L01'
-  path_img: 'data/images/Keyframes_L01'
+  path_video: 'data/videos'
+  path_img: 'data/images'
+
+clip:
+  path_json: 'data/dicts/json/keyframes_id_search.json'
+  path_bin: 'data/dicts/bin/faiss_CLIP_cosine.bin'
+
+blip2:
+  path_json: 'data/json/keyframes_id_search.json'
+  path_bin: 'data/bin/faiss_CLIP_cosine.bin'

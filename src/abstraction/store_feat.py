@@ -2,8 +2,7 @@ from abc import ABC, abstractmethod
 
 
 class StoreFeat(ABC):
-    @abstractmethod
-    def __init__(self, model, *args):
+    def __init__(self, model, **kwargs):
         pass    
     
     @abstractmethod

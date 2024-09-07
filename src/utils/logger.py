@@ -5,7 +5,7 @@ import logging
 import colorlog
 from pathlib import Path
 
-from src.utils.constants import *
+from src.utils.config import *
 from src.utils.utils import load_yaml
 
 

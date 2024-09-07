@@ -3,10 +3,8 @@ from typing import Dict, List
 from src.abstraction.encoder_model import EncoderModel
 
 class SearchDB(ABC):
-    
-    @abstractmethod
     def __init__(self, bin_path: str, json_path: str, 
-                 model: EncoderModel, show_time_compute: bool, *args):
+                 model: EncoderModel, show_time_compute: bool, **kwargs):
         pass
     
     @abstractmethod

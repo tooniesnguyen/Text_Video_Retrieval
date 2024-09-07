@@ -2,7 +2,7 @@ import time
 import os
 from pathlib import Path
 
-from src.utils.constants import CONFIG_FILE
+from src.utils.config import CONFIG_FILE
 from src.utils.utils import load_yaml
 from src.utils.logger import Logger
 

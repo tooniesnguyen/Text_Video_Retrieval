@@ -3,8 +3,8 @@ from src.abstraction.encoder_model import EncoderModel
 from src.utils.timer import time_complexity
 from src.utils.translate import Translation
 
-from src.utils.constants import WORK_DIR
-# import src.service.reranking.ImageReward.ImageReward as RM
+from src.utils.config import WORK_DIR
+import src.service.reranking.ImageReward.ImageReward as RM
 
 from langdetect import detect
 import matplotlib.pyplot as plt
@@ -38,6 +38,7 @@ class SearchFaiss(SearchDB):
     def __load_bin(self, bin_path):
         return faiss.read_index(bin_path)
     
+    @time_complexity("Time of show image")
     def save_result(self, image_paths, save_path: str):
         fig = plt.figure(figsize=(15, 10))
         columns = int(math.sqrt(len(image_paths)))
@@ -47,7 +48,7 @@ class SearchFaiss(SearchDB):
 
         for i in range(1, columns * rows + 1):
             try:
-                img = plt.imread("/media/hoangtv/New Volume/backup/data_aic2024/"+image_paths[i - 1])
+                img = plt.imread("/media/hoangtv/New Volume/backup/data_aic2024/"+image_paths[i - 1]) # 
             except:
                 img = black_image
             ax = fig.add_subplot(rows, columns, i)
@@ -60,7 +61,6 @@ class SearchFaiss(SearchDB):
         plt.savefig(output_path)
         plt.close(fig)
         
-    @time_complexity("Reranking Result")
     def __reranking_result(self, images_path: str, prompt: str) -> List:
         model = RM.load("ImageReward-v1.0")
         with torch.no_grad():
@@ -72,7 +72,7 @@ class SearchFaiss(SearchDB):
         
         return sorted_arr_path_img
     
-    
+    @time_complexity("Time search result")
     def search_query(self, text: str, k: int, rerank = False):
         self.rerank = rerank
         if detect(text) == 'vi':
@@ -83,8 +83,8 @@ class SearchFaiss(SearchDB):
         print("Idx images", idx_image)
         result_strings = list(map(lambda idx: self.dict_json[idx] if 0 <= idx < len(self.dict_json) else None, idx_image[-1]))
         
-        imgs_path_return = [os.path.join(WORK_DIR, "data", image_path) for image_path in result_strings]
+        imgs_path_return = [os.path.join("/media/hoangtv/New Volume/backup/data_aic2024/", image_path) for image_path in result_strings]
         if self.rerank:
-            result_strings = self.__reranking_result(result_strings, text)
+            result_strings = self.__reranking_result(imgs_path_return, text)
         
         return result_strings
