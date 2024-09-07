@@ -11,5 +11,9 @@ clip:
   path_bin: 'data/dicts/bin/faiss_CLIP_cosine.bin'
 
 blip2:
-  path_json: 'data/json/keyframes_id_search.json'
-  path_bin: 'data/bin/faiss_CLIP_cosine.bin'
+  path_json: 'data/dicts/json/keyframes_id_search.json'
+  path_bin: 'data/dicts/bin/faiss_BLIP2_cosine.bin'
+
+internvideo2:
+  path_json: 'data/dicts/json/keyframes_id_search_internVid2.json'
+  path_bin: 'data/dicts/bin/faiss_InternVideo2_cosine.bin'

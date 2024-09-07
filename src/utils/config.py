@@ -17,3 +17,6 @@ CLIP_BIN = os.path.join(WORK_DIR,data['clip']['path_bin'])
 
 BLIP2_JSON = os.path.join(WORK_DIR,data['blip2']['path_json'])
 BLIP2_BIN = os.path.join(WORK_DIR,data['blip2']['path_bin'])
+
+INTERNVIDEO2_JSON = os.path.join(WORK_DIR,data['internvideo2']['path_json'])
+INTERNVIDEO2_BIN = os.path.join(WORK_DIR,data['internvideo2']['path_bin'])

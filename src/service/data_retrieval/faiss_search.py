@@ -38,7 +38,7 @@ class SearchFaiss(SearchDB):
     def __load_bin(self, bin_path):
         return faiss.read_index(bin_path)
     
-    @time_complexity("Time of show image")
+    
     def save_result(self, image_paths, save_path: str):
         fig = plt.figure(figsize=(15, 10))
         columns = int(math.sqrt(len(image_paths)))
@@ -48,7 +48,7 @@ class SearchFaiss(SearchDB):
 
         for i in range(1, columns * rows + 1):
             try:
-                img = plt.imread("/media/hoangtv/New Volume/backup/data_aic2024/"+image_paths[i - 1]) # 
+                img = plt.imread(image_paths[i - 1]) # 
             except:
                 img = black_image
             ax = fig.add_subplot(rows, columns, i)
@@ -60,31 +60,22 @@ class SearchFaiss(SearchDB):
         output_path = os.path.join(save_path, f"{self.encoder_model.__class__.__name__}_{'rerank' if self.rerank else 'no_rerank'}.png")
         plt.savefig(output_path)
         plt.close(fig)
-        
-    def __reranking_result(self, images_path: str, prompt: str) -> List:
-        model = RM.load("ImageReward-v1.0")
-        with torch.no_grad():
-            ranking, rewards = model.inference_rank(prompt, images_path)
-            print("\nPreference predictions:\n")
-            print(f"ranking = {ranking}")
-            # print(f"rewards = {rewards}")
-            sorted_arr_path_img = [images_path[i - 1] for i in ranking]
-        
-        return sorted_arr_path_img
-    
+
+
     @time_complexity("Time search result")
-    def search_query(self, text: str, k: int, rerank = False):
+    def search_query(self, text: str, k: int, rerank = None):
         self.rerank = rerank
         if detect(text) == 'vi':
             text = self.translate(text)
         print("Text translation: ", text)
         text_feature = self.encoder_model.text_encoder(text) 
         scores, idx_image = self.index.search(text_feature, k=k)
-        print("Idx images", idx_image)
+        # print("Idx images", type(idx_image))
         result_strings = list(map(lambda idx: self.dict_json[idx] if 0 <= idx < len(self.dict_json) else None, idx_image[-1]))
         
-        imgs_path_return = [os.path.join("/media/hoangtv/New Volume/backup/data_aic2024/", image_path) for image_path in result_strings]
+        imgs_path_return = [os.path.join("/media/hoangtv/New Volume/backup/data_aic2024", image_path) for image_path in result_strings]
+        # print("Path return", imgs_path_return)
         if self.rerank:
-            result_strings = self.__reranking_result(imgs_path_return, text)
+            result_strings = self.rerank.reranking_result(imgs_path_return, text, scores=scores)
         
-        return result_strings
+        return scores, idx_image, result_strings

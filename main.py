@@ -1,6 +1,7 @@
 from src.service.data_retrieval.faiss_search import SearchFaiss
 # from src.service.data_encoder.InternVideo2 import EncoderInternVideo2
 from src.service.data_encoder.BLIP2 import BLIP2Model
+from src.service.reranking.ImageReward import ImageRewardMethod
 import torch
 import os
 
@@ -18,6 +19,7 @@ if __name__ == "__main__":
                         encoder_model= clip_model)
 
     text_query = "Một ngừơi mặc áo trắng đang dẫn chương trình với một người phụ nữ"
-    img_paths = search.search_query(text_query, k =42, rerank=True)
+    imgreward_method = ImageRewardMethod("cuda")
+    _, _, img_paths = search.search_query(text_query, k =42, rerank=imgreward_method)
 
     search.save_result(img_paths, save_path = "./results")
