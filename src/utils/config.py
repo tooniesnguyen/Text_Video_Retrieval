@@ -6,7 +6,7 @@ from src.utils.utils import load_yaml
 FILE = Path(__file__).resolve()
 WORK_DIR = FILE.parents[2]
 
-DATA_DIR = "/media/hoangtv/\"New Volume\"/backup/data_aic2024"
+DATA_DIR = "/media/hoangtv/New Volume/backup/data_aic2024"
 CONFIG_FILE = 'config/config.yaml'
 
 device = "cuda"
