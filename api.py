@@ -47,12 +47,12 @@ search_internvideo2 = SearchFaiss(
                     json_path = INTERNVIDEO2_JSON,
                     encoder_model= internvideo2_model)
 
-
+imgreward_method = ImageRewardMethod("cuda")
 
 class UserRequest(BaseModel):
     k: int
     text: str
-    rerank: bool
+    rerank: str
     mode_search: str
     submit_name: str
    
@@ -61,6 +61,18 @@ class Results:
     idx_images: List[int]
     image_paths: List[str]     
     
+model_dict = {
+    "internvideo2": search_internvideo2,
+    "blip2": search_blip2,
+    "clip": search_clip
+}
+
+rerank_dict = {
+    "None": None,
+    "ImgReward": imgreward_method,
+    "MostVote": None
+}
+
 @app.get("/")
 async def root():
     return {"message": "Hello World"}
@@ -69,12 +81,10 @@ async def root():
 async def text_retrieval(request: UserRequest):
     print("Text ", request.text, "K ", request.k)
     
-    if request.mode_search == "internvideo2":
-        scores, images_id, image_paths = search_internvideo2.search_query(request.text, request.k, rerank=request.rerank)
-    elif request.mode_search == "blip2":
-        scores, images_id, image_paths = search_blip2.search_query(request.text, request.k, rerank=request.rerank)
-    else:
-        scores, images_id, image_paths = search_clip.search_query(request.text, request.k, rerank=request.rerank)
+    search_method = model_dict.get(request.mode_search)
+    rerank_method = rerank_dict.get(request.rerank)
+    scores, images_id, image_paths = search_method.search_query(request.text, request.k, rerank=rerank_method)
+    search_method.save_result(image_paths, save_path = "./results")
     
     results = {'image_paths': image_paths}
     return JSONResponse(content=jsonable_encoder(results), status_code=200)

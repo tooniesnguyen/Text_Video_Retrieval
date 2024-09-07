@@ -76,6 +76,7 @@ class SearchFaiss(SearchDB):
         imgs_path_return = [os.path.join("/media/hoangtv/New Volume/backup/data_aic2024", image_path) for image_path in result_strings]
         # print("Path return", imgs_path_return)
         if self.rerank:
-            result_strings = self.rerank.reranking_result(imgs_path_return, text, scores=scores)
+            print("Reranking")
+            imgs_path_return = self.rerank.reranking_result(imgs_path_return, text, scores=scores)
         
-        return scores, idx_image, result_strings
+        return scores, idx_image, imgs_path_return
