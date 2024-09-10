@@ -7,4 +7,7 @@ data/*
 .vscode
 reports
 logs/
+templates/node_modules/
+templates/node_modules/package-lock.json
+
 *__pycache__

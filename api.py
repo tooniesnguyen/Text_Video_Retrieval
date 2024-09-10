@@ -20,6 +20,9 @@ import numpy as np
 from typing import List, Dict
 from multiprocessing import Pool
 
+import warnings
+warnings.filterwarnings("ignore")
+
 app = FastAPI(title='Ho Chi Minh AI Challenge 2024 - Text-Video Retrieval',description="""<h2>Made by`UTE-AI`</h2>""")
 app.add_middleware(
     CORSMiddleware,
@@ -54,7 +57,6 @@ class UserRequest(BaseModel):
     text: str
     rerank: str
     mode_search: str
-    submit_name: str
    
 class Results:
     scores: List[np.ndarray]
@@ -77,16 +79,17 @@ rerank_dict = {
 async def root():
     return {"message": "Hello World"}
 
-@app.post('/text_retrieval')
-async def text_retrieval(request: UserRequest):
+@app.post('/text_search')
+async def text_search(request: UserRequest):
     print("Text ", request.text, "K ", request.k)
     
     search_method = model_dict.get(request.mode_search)
     rerank_method = rerank_dict.get(request.rerank)
     scores, images_id, image_paths = search_method.search_query(request.text, request.k, rerank=rerank_method)
-    search_method.save_result(image_paths, save_path = "./results")
+        # search_method.save_result(image_paths, save_path = "./results")
     
-    results = {'image_paths': image_paths}
+    results = {'results': image_paths}
+    print(results)
     return JSONResponse(content=jsonable_encoder(results), status_code=200)
     
     
