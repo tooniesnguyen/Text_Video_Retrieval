@@ -20,3 +20,7 @@ BLIP2_BIN = os.path.join(WORK_DIR,data['blip2']['path_bin'])
 
 INTERNVIDEO2_JSON = os.path.join(WORK_DIR,data['internvideo2']['path_json'])
 INTERNVIDEO2_BIN = os.path.join(WORK_DIR,data['internvideo2']['path_bin'])
+
+OCR_JSON = os.path.join(WORK_DIR,data['ocr']['path_json'])
+OCR_BIN = os.path.join(WORK_DIR,data['ocr']['path_bin'])
+OCR_TXT = os.path.join(WORK_DIR,data['ocr']['path_txt'])

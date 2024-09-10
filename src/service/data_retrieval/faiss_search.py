@@ -27,6 +27,7 @@ class SearchFaiss(SearchDB):
         self.index = self.__load_bin(bin_path)
         self.dict_json = self.__read_json(json_path)
         self.translate = Translation()
+        self.model_not_trans = ["BKAIModel"]
         self.rerank = False
         
         
@@ -44,11 +45,11 @@ class SearchFaiss(SearchDB):
         columns = int(math.sqrt(len(image_paths)))
         rows = int(np.ceil(len(image_paths)/columns))
 
-        black_image = np.zeros((256, 256, 3))
+        black_image = np.full((256, 256, 3),255)
 
         for i in range(1, columns * rows + 1):
             try:
-                img = plt.imread(image_paths[i - 1]) # 
+                img = plt.imread(os.path.join(DATA_DIR, image_paths[i - 1])) #
             except:
                 img = black_image
             ax = fig.add_subplot(rows, columns, i)
@@ -64,15 +65,16 @@ class SearchFaiss(SearchDB):
 
     @time_complexity("Time search result")
     def search_query(self, text: str, k: int, rerank = None):
+        
         self.rerank = rerank
-        if detect(text) == 'vi':
+        if detect(text) == 'vi' and self.encoder_model.__class__.__name__ not in self.model_not_trans:
             text = self.translate(text)
         print("Text translation: ", text)
         text_feature = self.encoder_model.text_encoder(text) 
         scores, idx_image = self.index.search(text_feature, k=k)
         results_path = list(map(lambda idx: self.dict_json[idx] if 0 <= idx < len(self.dict_json) else None, idx_image[-1]))
         
-        print("Result :", results_path)
+        # print("Result :", results_path)
         if self.rerank:
             ranking_idx = self.rerank.reranking_result(results_path, text, scores=scores)
             results_path = np.array(results_path)[ranking_idx].tolist()

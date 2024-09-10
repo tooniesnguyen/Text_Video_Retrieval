@@ -17,3 +17,8 @@ blip2:
 internvideo2:
   path_json: 'data/dicts/json/keyframes_id_search_internVid2.json'
   path_bin: 'data/dicts/bin/faiss_InternVideo2_cosine.bin'
+
+ocr:
+  path_json: 'data/dicts/json/keyframes_id_search_ocr.json'
+  path_bin: 'data/dicts/bin/faiss_BKAI_OCR_cosine.bin'
+  path_txt: 'data/dicts/txt/info_ocr.txt'

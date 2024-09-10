@@ -21,3 +21,4 @@ image-reward
 uvicorn==0.30.6
 huggingface-hub==0.24.0
 transformers==4.28.1
+rapidfuzz
