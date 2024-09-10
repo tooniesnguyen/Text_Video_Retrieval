@@ -8,11 +8,11 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from src.service.data_retrieval.faiss_search import SearchFaiss
 from src.service.data_retrieval.ctrlf_search import CtrlFSearch
-# from src.service.reranking.ImageReward import ImageRewardMethod
+from src.service.reranking.ImageReward import ImageRewardMethod
 
-# from src.service.data_encoder.CLIP import CLIPModel
-# from src.service.data_encoder.BLIP2 import BLIP2Model
-# from src.service.data_encoder.InternVideo2 import InternVideo2Model
+from src.service.data_encoder.CLIP import CLIPModel
+from src.service.data_encoder.BLIP2 import BLIP2Model
+from src.service.data_encoder.InternVideo2 import InternVideo2Model
 from src.service.data_encoder.OCR_BKAI import BKAIModel
 
 from src.utils.utils import load_yaml
@@ -35,23 +35,23 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# clip_model =  CLIPModel(device = device)
-# search_clip = SearchFaiss(
-#                     bin_path = CLIP_BIN,
-#                     json_path = CLIP_JSON,
-                    # encoder_model= clip_model)
+clip_model =  CLIPModel(device = device)
+search_clip = SearchFaiss(
+                    bin_path = CLIP_BIN,
+                    json_path = CLIP_JSON,
+                    encoder_model= clip_model)
 
-# blip2_model =  BLIP2Model(device = device)
-# search_blip2 = SearchFaiss(
-#                     bin_path = BLIP2_BIN,
-#                     json_path = BLIP2_JSON,
-#                     encoder_model= blip2_model)
+blip2_model =  BLIP2Model(device = device)
+search_blip2 = SearchFaiss(
+                    bin_path = BLIP2_BIN,
+                    json_path = BLIP2_JSON,
+                    encoder_model= blip2_model)
 
-# internvideo2_model = InternVideo2Model(device = device)
-# search_internvideo2 = SearchFaiss(
-#                     bin_path = INTERNVIDEO2_BIN,
-#                     json_path = INTERNVIDEO2_JSON,
-#                     encoder_model= internvideo2_model)
+internvideo2_model = InternVideo2Model(device = device)
+search_internvideo2 = SearchFaiss(
+                    bin_path = INTERNVIDEO2_BIN,
+                    json_path = INTERNVIDEO2_JSON,
+                    encoder_model= internvideo2_model)
 
 ocr_model = BKAIModel(device=device)
 search_ocr_bkai = SearchFaiss(
@@ -60,7 +60,7 @@ search_ocr_bkai = SearchFaiss(
                 encoder_model=ocr_model)
 search_ocr_ctrl_f = CtrlFSearch(txt_file = OCR_TXT)
 
-# imgreward_method = ImageRewardMethod("cuda")
+imgreward_method = ImageRewardMethod("cuda")
 
 class UserRequest(BaseModel):
     k: int
@@ -74,16 +74,16 @@ class Results:
     image_paths: List[str]     
     
 model_dict = {
-    # "internvideo2": search_internvideo2,
-    # "blip2": search_blip2,
-    # "clip": search_clip,
+    "internvideo2": search_internvideo2,
+    "blip2": search_blip2,
+    "clip": search_clip,
     "ocr_bkai": search_ocr_bkai,
     "ocr_ctrlf": search_ocr_ctrl_f
 }
 
 rerank_dict = {
     "None": None,
-    # "ImgReward": imgreward_method,
+    "ImgReward": imgreward_method,
     "MostVote": None
 }
 
@@ -98,7 +98,7 @@ async def text_search(request: UserRequest):
     search_method = model_dict.get(request.mode_search)
     rerank_method = rerank_dict.get(request.rerank)
     scores, images_id, image_paths = search_method.search_query(request.text, request.k, rerank=rerank_method)
-    search_method.save_result(image_paths, save_path = "./results")
+    # search_method.save_result(image_paths, save_path = "./results")
     
     results = {'results': image_paths}
     # print(results)
