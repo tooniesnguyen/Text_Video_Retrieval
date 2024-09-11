@@ -33,8 +33,8 @@ class BKAIModel(EncoderModel):
 
     def text_encoder(self, text: str):
         encoded_input = self.__tokenizer(text, padding=True, truncation=True, return_tensors='pt')
-        input_ids = encoded_input['input_ids'].to(self.device)  # Chuyển dữ liệu đầu vào sang thiết bị CUDA
-        attention_mask = encoded_input['attention_mask'].to(self.device)  # Chuyển dữ liệu đầu vào sang thiết bị CUDA
+        input_ids = encoded_input['input_ids'].to(self.device)
+        attention_mask = encoded_input['attention_mask'].to(self.device)
 
         with torch.no_grad():
             model_output = self.__model(input_ids=input_ids, attention_mask=attention_mask)
