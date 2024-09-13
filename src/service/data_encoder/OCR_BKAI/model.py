@@ -17,7 +17,7 @@ class BKAIModel(EncoderModel):
     def __init__(self, device: str, *args) -> None:
         self.device = device
         self.__model, self.__tokenizer = self.load_model()
-        self.__model.to(self.device)  # Chuyển mô hình sang thiết bị CUDA
+        self.__model.to(self.device)
 
     def load_model(self):
         print("Loading model OCR")
@@ -27,7 +27,7 @@ class BKAIModel(EncoderModel):
         return [model, tokenizer]
 
     def __mean_pooling(self, model_output, attention_mask):
-        token_embeddings = model_output[0]  # First element of model_output contains all token embeddings
+        token_embeddings = model_output[0] 
         input_mask_expanded = attention_mask.unsqueeze(-1).expand(token_embeddings.size()).float()
         return torch.sum(token_embeddings * input_mask_expanded, 1) / torch.clamp(input_mask_expanded.sum(1), min=1e-9)
 
@@ -46,7 +46,7 @@ class BKAIModel(EncoderModel):
         pass
 
 if __name__ == '__main__':
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")  # Tự động xác định thiết bị
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     bkai_encoder = BKAIModel(device)
     text_feat = bkai_encoder.text_encoder("Hai người đang đánh nha")
     print("Text Encoder: ", text_feat.shape)

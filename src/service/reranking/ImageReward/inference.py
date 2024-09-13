@@ -19,6 +19,7 @@ class ImageRewardMethod(RerankMethod):
         with torch.no_grad():
             ranking, rewards = self.model.inference_rank(text_query, images_path_root)
             ranking = list(np.array(ranking) - 1)
-            print(f"ranking = {ranking}")        
-        return ranking
+            print(f"ranking = {ranking}") 
+        results_path = np.array(images_path)[ranking].tolist()       
+        return results_path
         

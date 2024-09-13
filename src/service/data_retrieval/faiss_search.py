@@ -72,12 +72,11 @@ class SearchFaiss(SearchDB):
         print("Text translation: ", text)
         text_feature = self.encoder_model.text_encoder(text) 
         scores, idx_image = self.index.search(text_feature, k=k)
+        scores = scores[0].tolist()
         results_path = list(map(lambda idx: self.dict_json[idx] if 0 <= idx < len(self.dict_json) else None, idx_image[-1]))
         
         # print("Result :", results_path)
         if self.rerank:
-            ranking_idx = self.rerank.reranking_result(results_path, text, scores=scores)
-            results_path = np.array(results_path)[ranking_idx].tolist()
+            results_path = self.rerank.reranking_result(results_path, text, scores=scores, k=k)
             
-        
         return scores, idx_image, results_path

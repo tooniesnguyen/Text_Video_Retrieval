@@ -9,6 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from src.service.data_retrieval.faiss_search import SearchFaiss
 from src.service.data_retrieval.ctrlf_search import CtrlFSearch
 from src.service.reranking.ImageReward import ImageRewardMethod
+from src.service.reranking.model_vote import VotedMethod
 
 from src.service.data_encoder.CLIP import CLIPModel
 from src.service.data_encoder.BLIP2 import BLIP2Model
@@ -41,11 +42,11 @@ search_clip = SearchFaiss(
                     json_path = CLIP_JSON,
                     encoder_model= clip_model)
 
-blip2_model =  BLIP2Model(device = device)
-search_blip2 = SearchFaiss(
-                    bin_path = BLIP2_BIN,
-                    json_path = BLIP2_JSON,
-                    encoder_model= blip2_model)
+# blip2_model =  BLIP2Model(device = device)
+# search_blip2 = SearchFaiss(
+#                     bin_path = BLIP2_BIN,
+#                     json_path = BLIP2_JSON,
+#                     encoder_model= blip2_model)
 
 internvideo2_model = InternVideo2Model(device = device)
 search_internvideo2 = SearchFaiss(
@@ -53,15 +54,15 @@ search_internvideo2 = SearchFaiss(
                     json_path = INTERNVIDEO2_JSON,
                     encoder_model= internvideo2_model)
 
-ocr_model = BKAIModel(device=device)
-search_ocr_bkai = SearchFaiss(
-                bin_path=OCR_BIN,
-                json_path=OCR_JSON,
-                encoder_model=ocr_model)
-search_ocr_ctrl_f = CtrlFSearch(txt_file = OCR_TXT)
+# ocr_model = BKAIModel(device=device)
+# search_ocr_bkai = SearchFaiss(
+#                 bin_path=OCR_BIN,
+#                 json_path=OCR_JSON,
+#                 encoder_model=ocr_model)
+# search_ocr_ctrl_f = CtrlFSearch(txt_file = OCR_TXT)
 
 imgreward_method = ImageRewardMethod("cuda")
-
+vote_method = VotedMethod(device, search_internvideo2)
 class UserRequest(BaseModel):
     k: int
     text: str
@@ -74,17 +75,17 @@ class Results:
     image_paths: List[str]     
     
 model_dict = {
-    "internvideo2": search_internvideo2,
-    "blip2": search_blip2,
     "clip": search_clip,
-    "ocr_bkai": search_ocr_bkai,
-    "ocr_ctrlf": search_ocr_ctrl_f
+    # "internvideo2": search_internvideo2,
+    # "blip2": search_blip2,
+    # "ocr_bkai": search_ocr_bkai,
+    # "ocr_ctrlf": search_ocr_ctrl_f
 }
 
 rerank_dict = {
     "None": None,
     "ImgReward": imgreward_method,
-    "MostVote": None
+    "Vote": vote_method
 }
 
 @app.get("/")
@@ -99,7 +100,9 @@ async def text_search(request: UserRequest):
     rerank_method = rerank_dict.get(request.rerank)
     scores, images_id, image_paths = search_method.search_query(request.text, request.k, rerank=rerank_method)
     # search_method.save_result(image_paths, save_path = "./results")
-    
+    # print("Tyoe if scores :", type(scores))
+    # print("Score :", scores)
+    print("Results: ", image_paths)
     results = {'results': image_paths}
     # print(results)
     return JSONResponse(content=jsonable_encoder(results), status_code=200)

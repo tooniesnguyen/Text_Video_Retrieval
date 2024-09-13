@@ -7,5 +7,5 @@ class RerankMethod (ABC):
         pass
     
     @abstractmethod
-    def reranking_result(self, images_file: List[str], text_query: str, scores: List[int]):
+    def reranking_result(self, images_file: List[str], text_query: str, scores: List[int], **kwargs):
         pass
