@@ -92,7 +92,7 @@ for keyframes_path in keyframes_paths:
             chars_to_replace = "^*()-_+=,\"\'?%#@!~$^&|;<>{}[]"
             video_folder_name = os.path.basename(video_folder)
 
-            img_paths = sorted(glob.glob(os.path.join(video_folder, "*.jpg")))[::5]
+            img_paths = sorted(glob.glob(os.path.join(video_folder, "*.jpg")))
 
             with open(os.path.join(root_path, keyframes_name, f"{video_folder_name}.txt"), 'w') as f:
                 for img_path in img_paths:

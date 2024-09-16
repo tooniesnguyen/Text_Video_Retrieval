@@ -38,6 +38,7 @@ class MyFaiss:
     return faiss.read_index(bin_file)
   
   def text_search(self, text, k):
+    text = text.lower()
     text = self.model.encode(text).reshape(1,-1)
     scores, idx_image = self.index.search(np.array(text), k=k)
     idx_image = idx_image.flatten()
