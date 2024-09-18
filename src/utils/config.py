@@ -12,6 +12,10 @@ CONFIG_FILE = 'config/config.yaml'
 device = "cuda"
 data = load_yaml(path=os.path.join(WORK_DIR,CONFIG_FILE))
 
+DATA_DICT_JSON = os.path.join(DATA_DIR,data['data']['dict_json'])
+DATA_DICT_CSV= os.path.join(DATA_DIR,data['data']['dict_csv'])
+
+
 CLIP_JSON = os.path.join(WORK_DIR,data['clip']['path_json'])
 CLIP_BIN = os.path.join(WORK_DIR,data['clip']['path_bin'])
 

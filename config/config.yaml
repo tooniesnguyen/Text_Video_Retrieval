@@ -5,6 +5,8 @@ logger:
 data:
   path_video: 'data/videos'
   path_img: 'data/images'
+  dict_json: 'dicts/json'
+  dict_csv: 'dicts/csv'
 
 clip:
   path_json: 'data/dicts/json/keyframes_id_search.json'

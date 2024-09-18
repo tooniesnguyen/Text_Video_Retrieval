@@ -10,16 +10,16 @@ from pathlib import Path
 import sys
 
 FILE = Path(__file__).resolve()
-ROOT = FILE.parents[3]
+ROOT = FILE.parents[4]
 if str(ROOT) not in sys.path:
     sys.path.append(str(ROOT))
 
-from src.data_preprocess.Autoshot.supernet import TransNetV2Supernet
-from src.data_preprocess.utils import get_frames, get_batches
-from src.data_preprocess.utils import predictions_to_scenes 
-from src.data_preprocess.utils import Result2Text
-from src.data_preprocess.utils import Result2Image
-from src.data_preprocess.utils import Visualize2Image
+from src.service.data_preprocess.Autoshot.supernet import TransNetV2Supernet
+from src.service.data_preprocess.utils import get_frames, get_batches
+from src.service.data_preprocess.utils import predictions_to_scenes 
+from src.service.data_preprocess.utils import Result2Text
+from src.service.data_preprocess.utils import Result2Image
+from src.service.data_preprocess.utils import Visualize2Image
 from tqdm import tqdm
 
 from src.utils.logger import register

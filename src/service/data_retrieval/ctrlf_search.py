@@ -58,6 +58,7 @@ class CtrlFSearch(SearchDB):
         plt.close(fig)
 
     def search_query(self, text: str, k: int, **kwargs):
+        text = text.lower()
         score, idx_image = [0, 0]
         results = [self._extract_keyframe_path(line) for line in self.data if text in line]
         num_to_add = k - len(results)

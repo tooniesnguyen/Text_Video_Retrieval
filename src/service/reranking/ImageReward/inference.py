@@ -14,7 +14,7 @@ class ImageRewardMethod(RerankMethod):
     def load_model(self):
         return RM.load("ImageReward-v1.0").to(self.device)
     
-    def reranking_result(self, images_path: str, text_query: str, scores: None) -> List:
+    def reranking_result(self, images_path: str, text_query: str, scores: None, **kwargs) -> List:
         images_path_root = [os.path.join(DATA_DIR, image_path) for image_path in images_path]
         with torch.no_grad():
             ranking, rewards = self.model.inference_rank(text_query, images_path_root)

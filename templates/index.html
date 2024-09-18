@@ -34,10 +34,9 @@
         input {
             border-radius: 32px;
             padding: 10px 20px;
-            width: 100%;
             outline: none;
             border: 1px solid #9ea8ab;
-            width: 500px;
+            width: 50%;
             margin-left: 10px;
         }
 
@@ -162,7 +161,7 @@
     </select>
 
 
-    <input type="text" id="image-id" placeholder="image id" style="width: 200px !important;">
+    <input type="text" id="image-id" placeholder="k" style="width: 200px !important;">
     <select id="pet-select">
         <option value="clip">clip</option>
         <option value="internvideo2">internvideo2</option>
@@ -176,8 +175,7 @@
     <button id="search-button">Search</button>
     <!-- <button id="search-button1">Search</button> -->
 
-    <input type="text" id="csvName" placeholder="tên file tải xuống" style="width: 200px !important;">
-
+    
     <button id="downloadCSV">Download CSV</button>
     <button id="submitBtn">Submit</button>
     <button id="show-more-button">Show more</button>
@@ -202,6 +200,9 @@
               
                 <td>
                     remove row
+                </td>
+                <td>
+                    CheckVideo
                 </td>
             </tr>
 
@@ -231,7 +232,6 @@
         const formEl = document.querySelector("form")
         const inputData = document.getElementById("search-input")
         const rerank = document.getElementById("re-rank")
-
         const searchResults = document.querySelector(".search-results")
         const showMore = document.getElementById("show-more-button")
         const imageId = document.getElementById("image-id")
@@ -259,14 +259,14 @@
             }
         }
 
-        // When the user clicks on the button, scroll to the top of the document
+        // When the user clics on the button, scroll to the top of the document
         function topFunction() {
             document.body.scrollTop = 0; // For Safari
             document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
         }
         $(document).ready(function () {
 
-            // $('#search-button1').click(() => {
+            // $('#search-button1').clic(() => {
             //     $("#search-results").children().remove();
 
             // })
@@ -281,7 +281,7 @@
                 }
                 $("#search-results").children().remove();
                 const url = 'http://localhost:8000/text_search';
-
+                dataforDownLoadCSV =[]
                 const headers = {
                     'accept': 'application/json',
                     'Content-Type': 'application/json'
@@ -293,7 +293,7 @@
                 const data = {
                     text: inputData.value,
                     rerank: rerankSelect,
-                    k: 100,
+                    k: imageId.value || 100,
                     mode_search: selectedValue,
                 };
                 const requestOptions = {
@@ -319,38 +319,47 @@
                 //     ],
                 // }
                 // Group the bodyData.image_paths into groups of L07_V027
-                var groups = bodyData.results.reduce(function (r, o) {
-                    var key = o.split('/')[2];
-                    if (!r[key]) r[key] = [];
-                    r[key].push(o);
-                    return r;
-                }, {});
-                let pattern = /data\//g;
+                // var groups = bodyData.results.reduce(function (r, o) {
+                //     var key = o.split('/')[2];
+                //     if (!r[key]) r[key] = [];
+                //     r[key].push(o);
+                //     return r;
+                // }, {});
+                // let pattern = /data\//g;
                 // Push with id "myDiv" and add the new element to the div with id "myDiv"
-                for (const [key, value] of Object.entries(groups)) {
-                    // Push all value array into div with id "myDiv"
-                    var keyElement = $(`<div style="width: 100%; height: 100px;border: 1px solid DeepSkyBlue; border-radius: 30px;     position:relative; margin-bottom: 10px; margin-top: 10px;" class="headerClick" > <h1 ">${key}</h1> </div>`);
-                    $("#search-results").append(keyElement);
+                // for (const [key, value] of Object.entries(groups)) {
+                //     // Push all value array into div with id "myDiv"
+                //     var keyElement = $(`<div style="width: 100%; height: 100px;border: 1px solid DeepSkyBlue; border-radius: 30px;     position:relative; margin-bottom: 10px; margin-top: 10px;" class="headerClick" > <h1 ">${key}</h1> </div>`);
+                //     $("#search-results").append(keyElement);
 
-                    for (let i = 0; i < value.length; i++) {
-                        let replacement = "";
-                        let outputString = value[i].replace(pattern, replacement);
-                        var newElement = $(`<div style="width: 400px;border: 1px solid DeepSkyBlue; border-radius: 30px;     position:relative; margin-bottom: 25px; margin-top: 25px;" class="smallEle" > <img style="width: 100%; border-radius:30px;height: 100%;" src="http://localhost:4010/${outputString}" alt="" /> </div>`);
-                        $("#search-results").append(newElement);
-                    }
+                //     for (let i = 0; i < value.length; i++) {
+                //         let replacement = "";
+                //         let outputString = value[i].replace(pattern, replacement);
+                //         var newElement = $(`<div style="width: 400px;border: 1px solid DeepSkyBlue; border-radius: 30px;     position:relative; margin-bottom: 25px; margin-top: 25px;" class="smallEle" > <img style="width: 100%; border-radius:30px;height: 100%;" src="http://localhost:4050/${outputString}" alt="" /> </div>`);
+                //         $("#search-results").append(newElement);
+                //     }
 
 
-                }
+                // }
 
-                // bodyData.image_paths.map((data, idx) => {
-                //     let pattern = /data\//g;
-                //     let replacement = "";
-                //     let outputString = data.replace(pattern, replacement);
-                //     var newElement = $(`<div style="width: 500px;border: 1px solid DeepSkyBlue; border-radius: 30px;     position:relative; margin-bottom: 25px; margin-top: 25px;" class="smallEle" > <img style="width: 100%; border-radius:30px;height: 100%;" src="http://localhost:4545/static/${outputString}" alt="" /> </div>`);
-
-                //     // Append the new element to the div with id "myDiv"
-                //     $("#search-results").append(newElement);
-                // })
+                bodyData.image_paths.map((data, idx) => {
+                    let pattern = /data\//g;
+                    let replacement = "";
+                    let outputString = data.replace(pattern, replacement);
+                    var newElement = $(`<div style="width: 300px;border: 1px solid DeepSkyBlue;    position:relative; margin-bottom: 25px; margin-top: 25px;" class="smallEle" > <img style="width: 100%; height: 100%;" src="http://localhost:4050/${outputString}" alt="" 
+                        b="${bodyData.url[idx]}"
+                        />
+                       <p style="position:absolute; left:0;border-radius:30px; bottom:140px;
+                       font-size:14px;
+                       color:red;
+                       font-weight:bold;
+                       width:30px" > ${outputString}</p>
+                    `);
+                    // add outputstring to path
+                    // Append the new element to the div with id "myDiv"
+                   
+                    $("#search-results").append(newElement);
+                })
                 var searchButton = $('#search-button').css('opacity', '1')
                 $("#search-button").prop('disabled', false);
 
@@ -358,13 +367,13 @@
             })
             $('#search-results').on('click', '.smallEle', function () {
                 var ele = $(this).find('img')
+                var b123 = ele.attr('b')
                 var srcAttribute = ele.attr('src');
                 $(this).css('opacity', '0.5')
                 $(this).append(`<img style="position:absolute; left:0;border-radius:30px; width:30px" id="123" src="https://media.istockphoto.com/id/1313547780/vector/profile-verification-check-marks-icons-vector-illustration.jpg?s=612x612&w=0&k=20&c=XDWxGC05gd-sTn_cBvlI2aG1onqOdiVdPb0IeFO-Q2M=" />`)
                 var parts = srcAttribute.split('/');
 
                 var tempfileId = parts[parts.length - 1].split('.'); // 2sc position
-                console.log(parts)
                 var fileId = tempfileId[tempfileId.length - 2]
                 var fileName = parts[parts.length - 2] // 1st position
                 var isDifferent = true;
@@ -379,7 +388,10 @@
                 }
                 if (isDifferent) {
                     // add new Row base on dataforDownLoadCSV
-                    $("#GFG").append(`<tr> <td>${dataforDownLoadCSV.length}</td> <td>${fileName}</td> <td>${fileId}</td> <td> <img src=${ele.attr("src")} style="width:100px; height:100px" />  </td> <td  class="removeRow" > removeRow </td></tr>`);
+                    $("#GFG").append(`<tr> <td>${dataforDownLoadCSV.length}</td> <td>${fileName}</td> <td>${fileId}</td> <td> <img src=${ele.attr("src")} style="width:100px; height:100px" />  </td> <td  class="removeRow" > removeRow </td>
+                        <td > ${b123} </td>
+                        
+                        </tr>`);
                     dataforDownLoadCSV.push([fileName, fileId]);
                 } else {
                     // Remove row base on dataforDownLoadCSV[position]
@@ -408,49 +420,23 @@
                 var csvContent = "data:text/csv;charset=utf-8,";
                 // remove ['\n                fileName\n            ', '\n                frameId\n            ']
                 // Create a data URI for the CSV content
-                dataforDownLoadCSV.shift()
+              //  dataforDownLoadCSV.shift()
                 dataforDownLoadCSV.forEach(function (rowArray) {
                     var row = rowArray.join(",");
                     csvContent += row + "\r\n";
                 });
-
+                console.log(dataforDownLoadCSV)
                 var encodedUri = encodeURI(csvContent);
 
                 // Create a temporary <a> element to trigger the download
                 var link = document.createElement("a");
                 link.setAttribute("href", encodedUri);
-                var fileName = document.getElementById("csvName").value
-                link.setAttribute("download", `${fileName}.csv`);
+                link.setAttribute("download", `data.csv`);
 
                 // Simulate a click on the link to trigger the download
                 link.click();
             });
-            // $(function () {
-            //     // Drag and drop table rows base on row id, fileName, fileId
-            //     $("#GFG").sortable({
-            //         items: 'tr:not(tr:first-child)',
-            //         dropOnEmpty: false,
-            //         start: function (G, ui) {
-            //             ui.item.addClass("select");
-            //         },
-            //         stop: function (G, ui) {
-            //             ui.item.removeClass("select");
-            //             // Change dataDownloadForCSV
-            //             var data = [];
-
-            //             // Do not get first row
-            //             $("#GFG tr").each(function () {
-            //                 var value = $(this).find("td")
-            //                 if (value[0].innerHTML !== "id") {
-            //                     data.push([value[1].innerHTML, value[2].innerHTML]);
-            //                 }
-            //             })
-            //             dataforDownLoadCSV = data.slice(0);
-
-            //         }
-
-            //     });
-            // });
+        
             $('#search-results').on('click', '.headerClick', function () {
                 var ele = $(this).find('h1')
                 var srcAttribute = ele.text();
