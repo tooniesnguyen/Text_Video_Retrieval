@@ -1,0 +1,1 @@
+Lưu ý file  Excel sẽ chứa FPS của vid và  file Json sẽ chứa  đường dẫn  của  ảnh.
