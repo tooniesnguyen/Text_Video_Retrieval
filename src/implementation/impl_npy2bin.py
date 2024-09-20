@@ -11,8 +11,8 @@ if str(ROOT) not in sys.path:
 from src.service.data_storing.faiss_storing import FaissDB
 
 ####################### ArgumentParser ##############################
-parser = argparse.ArgumentParser(description='CLIP Encoder')
-parser.add_argument('--i', default='/home/hoangtv/Desktop/Nhan_CDT/CERBERUS/research/Text_Video_Retrieval/data/dicts/npy/clip', type=str, help= "Input Dir")
+parser = argparse.ArgumentParser(description='CLIP Encoder') # EDIT
+parser.add_argument('--i', default='/home/hoangtv/Desktop/Nhan_CDT/CERBERUS/research/Text_Video_Retrieval/data/dicts/npy/blip2', type=str, help= "Input Dir") # EDIT
 parser.add_argument('--o', default='/home/hoangtv/Desktop/Nhan_CDT/CERBERUS/research/Text_Video_Retrieval/data/dicts/bin', type=str, help= "Output Dir")
 args = parser.parse_args()
 ####################################################################
@@ -22,5 +22,5 @@ args = parser.parse_args()
 if __name__ == "__main__":
     npy_path = args.i
     bin_path = args.o
-    store_db = FaissDB("CLIP",512,"cosine")
+    store_db = FaissDB("BLIP2",768,"cosine") # edit
     store_db.merge_npy2bin(npy_path, bin_path)

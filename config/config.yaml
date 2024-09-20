@@ -7,6 +7,7 @@ data:
   path_img: 'data/images'
   dict_json: 'dicts/json'
   dict_csv: 'dicts/csv'
+  ytb_file: 'data/dicts/json/convert_image2ytb.json' 
 
 clip:
   path_json: 'data/dicts/json/keyframes_id_search.json'

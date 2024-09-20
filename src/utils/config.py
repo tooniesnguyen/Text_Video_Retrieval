@@ -9,12 +9,12 @@ WORK_DIR = FILE.parents[2]
 DATA_DIR = "/media/hoangtv/New Volume/backup/data_aic2024"
 CONFIG_FILE = 'config/config.yaml'
 
-device = "cuda"
+device = "cuda:1"
 data = load_yaml(path=os.path.join(WORK_DIR,CONFIG_FILE))
 
 DATA_DICT_JSON = os.path.join(DATA_DIR,data['data']['dict_json'])
 DATA_DICT_CSV= os.path.join(DATA_DIR,data['data']['dict_csv'])
-
+YTB_DICT_JSON = os.path.join(WORK_DIR, data['data']['ytb_file'])
 
 CLIP_JSON = os.path.join(WORK_DIR,data['clip']['path_json'])
 CLIP_BIN = os.path.join(WORK_DIR,data['clip']['path_bin'])

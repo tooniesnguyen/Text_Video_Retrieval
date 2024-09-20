@@ -2,6 +2,16 @@ import os
 import json
 import pandas as pd
 
+
+import os
+import sys
+from pathlib import Path
+from tqdm import tqdm
+
+FILE = Path(__file__).resolve()
+WORK_DIR = FILE.parents[3]
+if str(WORK_DIR) not in sys.path:
+    sys.path.append(str(WORK_DIR))
 from src.utils.config import DATA_DICT_JSON, DATA_DICT_CSV
 
 def get_watch_url(json_file_path):
@@ -22,6 +32,17 @@ def retrieval_video(image_path):
     url_time = f"{url_ytb}&t={cal_time}s"
     return url_time
 
+def convert_path2ytb(path_json_image, path_json_ytb):
+    with open(path_json_image, 'r') as f:
+        image_list = json.load(f)
+    result_dict = {image_path: retrieval_video(image_path) for image_path in tqdm(image_list)}
+    with open(path_json_ytb, 'w') as o:
+        json.dump(result_dict, o, indent=4)
+
 if __name__ == "__main__":
-    print(retrieval_video("images/Keyframes_L01/L01_V014/016486.jp"))
+    # print(retrieval_video("images/Keyframes_L01/L01_V014/016486.jp"))
+    path_json_image = "/home/hoangtv/Desktop/Nhan_CDT/CERBERUS/research/Text_Video_Retrieval/data/dicts/json/keyframes_id_search.json"
+    path_json_ytb = "/home/hoangtv/Desktop/Nhan_CDT/CERBERUS/research/Text_Video_Retrieval/data/dicts/json/convert_image2ytb.json"
+    convert_path2ytb(path_json_image, path_json_ytb)
+        
     

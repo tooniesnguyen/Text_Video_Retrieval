@@ -389,7 +389,7 @@
                 if (isDifferent) {
                     // add new Row base on dataforDownLoadCSV
                     $("#GFG").append(`<tr> <td>${dataforDownLoadCSV.length}</td> <td>${fileName}</td> <td>${fileId}</td> <td> <img src=${ele.attr("src")} style="width:100px; height:100px" />  </td> <td  class="removeRow" > removeRow </td>
-                        <td > ${b123} </td>
+                        <td > <a href="${b123}" target="_blank">Click Here </a> </td>
                         
                         </tr>`);
                     dataforDownLoadCSV.push([fileName, fileId]);

@@ -17,7 +17,7 @@ from src.service.data_encoder.BLIP2 import BLIP2Model
 from src.service.data_encoder.InternVideo2 import InternVideo2Model
 from src.service.data_encoder.OCR_BKAI import BKAIModel
 
-from src.utils.utils import load_yaml
+from src.utils.utils import load_yaml, read_json_file
 from src.utils.config import *
 
 import os
@@ -62,7 +62,8 @@ search_ocr_bkai = SearchFaiss(
                 encoder_model=ocr_model)
 search_ocr_ctrl_f = CtrlFSearch(txt_file = OCR_TXT)
 
-imgreward_method = ImageRewardMethod("cuda")
+dict_img2ytb = read_json_file(YTB_DICT_JSON)
+imgreward_method = ImageRewardMethod(device)
 vote_method = VotedMethod(device, search_internvideo2)
 class UserRequest(BaseModel):
     k: int
@@ -101,7 +102,8 @@ async def text_search(request: UserRequest):
     rerank_method = rerank_dict.get(request.rerank)
     scores, images_id, image_paths = search_method.search_query(request.text, request.k, rerank=rerank_method)
     
-    ytb_url = list(map(retrieval_video, image_paths))
+    ytb_url = list(map(lambda image_item: dict_img2ytb[image_item], image_paths))
+
     # search_method.save_result(image_paths, save_path = "./results")
     
     results = {'image_paths': image_paths,
