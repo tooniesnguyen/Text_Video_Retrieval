@@ -12,4 +12,4 @@ templates/node_modules/package-lock.json
 
 *__pycache__
 
-src/service/data_preprocess/clean_data/implement.ipynb
+temp/
