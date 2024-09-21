@@ -15,7 +15,9 @@ from src.service.reranking.model_vote import VotedMethod
 from src.service.data_encoder.CLIP import CLIPModel
 from src.service.data_encoder.BLIP2 import BLIP2Model
 from src.service.data_encoder.InternVideo2 import InternVideo2Model
-from src.service.data_encoder.OCR_BKAI import BKAIModel
+# from src.service.data_encoder.OCR_BKAI import BKAIModel
+# from src.service.data_encoder.VN_EMBEDD import VietnameseEmbeddingModel
+
 
 from src.utils.utils import load_yaml, read_json_file
 from src.utils.config import *
@@ -49,18 +51,25 @@ search_blip2 = SearchFaiss(
                     json_path = BLIP2_JSON,
                     encoder_model= blip2_model)
 
-internvideo2_model = InternVideo2Model(device = device)
+internvideo2_model = InternVideo2Model(device = "cuda:0")
 search_internvideo2 = SearchFaiss(
                     bin_path = INTERNVIDEO2_BIN,
                     json_path = INTERNVIDEO2_JSON,
                     encoder_model= internvideo2_model)
 
-ocr_model = BKAIModel(device=device)
-search_ocr_bkai = SearchFaiss(
-                bin_path=OCR_BIN,
-                json_path=OCR_JSON,
-                encoder_model=ocr_model)
+# ocr_model = VietnameseEmbeddingModel(device=device)
+# search_ocr_vn_embedd = SearchFaiss(
+#                 bin_path=OCR_BIN,
+#                 json_path=OCR_JSON,
+#                 encoder_model=ocr_model)
 search_ocr_ctrl_f = CtrlFSearch(txt_file = OCR_TXT)
+
+# asr_model = VietnameseEmbeddingModel(device=device)
+# search_asr_vn_embedd = SearchFaiss(
+#                 bin_path=ASR_BIN,
+#                 json_path=ASR_JSON,
+#                 encoder_model=asr_model)
+search_asr_ctrl_f = CtrlFSearch(txt_file = ASR_TXT)
 
 dict_img2ytb = read_json_file(YTB_DICT_JSON)
 imgreward_method = ImageRewardMethod(device)
@@ -80,8 +89,10 @@ model_dict = {
     "clip": search_clip,
     "internvideo2": search_internvideo2,
     "blip2": search_blip2,
-    "ocr_bkai": search_ocr_bkai,
-    "ocr_ctrlf": search_ocr_ctrl_f
+    # "ocr_embedd": search_ocr_vn_embedd,
+    "ocr_ctrlf": search_ocr_ctrl_f,
+    # "asr_embedd": search_asr_vn_embedd,
+    "asr_ctrlf": search_asr_ctrl_f
 }
 
 rerank_dict = {

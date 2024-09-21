@@ -1,0 +1,52 @@
+from pathlib import Path
+import sys
+import numpy as np
+from transformers import AutoTokenizer, AutoModel
+import torch
+
+# FILE = Path(__file__).resolve()
+# ROOT = FILE.parents[4]
+# if str(ROOT) not in sys.path:
+#     sys.path.append(str(ROOT))
+
+from src.abstraction.encoder_model import EncoderModel
+from src.utils.logger import register
+
+
+class VietnameseEmbeddingModel(EncoderModel):
+    def __init__(self, device: str, *args) -> None:
+        self.device = device
+        self.__model, self.__tokenizer = self.load_model()
+        self.__model.to(self.device)
+
+    def load_model(self):
+
+        model = AutoModel.from_pretrained('dangvantuan/vietnamese-embedding-LongContext',trust_remote_code=True)
+        tokenizer = AutoTokenizer.from_pretrained('dangvantuan/vietnamese-embedding-LongContext',trust_remote_code=True)
+        return model, tokenizer
+
+    def __mean_pooling(self, model_output, attention_mask):
+        token_embeddings = model_output[0] 
+        input_mask_expanded = attention_mask.unsqueeze(-1).expand(token_embeddings.size()).float()
+        return torch.sum(token_embeddings * input_mask_expanded, 1) / torch.clamp(input_mask_expanded.sum(1), min=1e-9)
+
+    def text_encoder(self, text: str):
+        encoded_input = self.__tokenizer(text, padding=True, truncation=True, return_tensors='pt')
+        input_ids = encoded_input['input_ids'].to(self.device)
+        attention_mask = encoded_input['attention_mask'].to(self.device)
+        with torch.no_grad():
+            model_output = self.__model(input_ids=input_ids, attention_mask=attention_mask)
+        
+        text_feat = self.__mean_pooling(model_output, attention_mask).cpu().detach().numpy().astype(np.float32)
+        return text_feat
+
+    def image_encoder(self, image_path: str):
+        print("Image encoding is not implemented for this model")
+        return None
+
+if __name__ == '__main__':
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    vietnamese_encoder = VietnameseEmbeddingModel(device)
+    text_feat = vietnamese_encoder.text_encoder("Hi")
+    print(f"Text Encoder shape: {text_feat.shape}")
+    print(f"Text Encoder output: {text_feat}")

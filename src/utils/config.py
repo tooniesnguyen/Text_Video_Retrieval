@@ -28,3 +28,7 @@ INTERNVIDEO2_BIN = os.path.join(WORK_DIR,data['internvideo2']['path_bin'])
 OCR_JSON = os.path.join(WORK_DIR,data['ocr']['path_json'])
 OCR_BIN = os.path.join(WORK_DIR,data['ocr']['path_bin'])
 OCR_TXT = os.path.join(WORK_DIR,data['ocr']['path_txt'])
+
+ASR_JSON = os.path.join(WORK_DIR,data['asr']['path_json'])
+ASR_BIN = os.path.join(WORK_DIR,data['asr']['path_bin'])
+ASR_TXT = os.path.join(WORK_DIR,data['asr']['path_txt'])

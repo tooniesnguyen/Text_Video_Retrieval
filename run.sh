@@ -1,1 +1,1 @@
-uvicorn api:app --host 0.0.0.0 --port 8009 --workers 20 --reload
+uvicorn api:app --host 0.0.0.0 --port 8018 --workers 20 --reload
